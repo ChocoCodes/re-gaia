@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 45280a71a960c70459f2f9fc0a4c0cea
+guid: 471b3fe4d0455c747b91a4e99ffc6e5d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4723107735738678597
-    second: Idle_0
+      213: -4655225800706817987
+    second: JumpingAndFalling_0
+  - first:
+      213: -6352994476092987690
+    second: JumpingAndFalling_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: JumpingAndFalling_0
       rect:
         serializedVersion: 2
-        x: 29
+        x: 20
         y: 0
-        width: 19
-        height: 35
+        width: 27
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54d7a982679db8140800000000000000
-      internalID: 4723107735738678597
+      spriteID: d3003a77cc0556fb0800000000000000
+      internalID: -4655225800706817987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpingAndFalling_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d665700f21a5d7a0800000000000000
+      internalID: -6352994476092987690
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Idle_0: 4723107735738678597
+      JumpingAndFalling_0: -4655225800706817987
+      JumpingAndFalling_1: -6352994476092987690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

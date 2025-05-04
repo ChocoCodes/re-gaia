@@ -4,10 +4,12 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator animator;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
     float horizontalMovement;
+    bool isFacingRight = true;
 
     [Header("Jumping")]
     public float jumpPower = 10f;
@@ -28,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
         Gravity();
+        Flip();
+
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        animator.SetFloat("magnitude", Mathf.Abs(rb.linearVelocity.x));
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -45,11 +51,14 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
-        }
+            animator.SetTrigger("jump");
+        }/*
         else if (context.canceled)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            animator.SetTrigger("jump");
         }
+        */
     }
 
     private void Gravity()
@@ -62,6 +71,17 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.gravityScale = baseGravity;
+        }
+    }
+
+    private void Flip()
+    {
+        if (isFacingRight && horizontalMovement < 0 || !isFacingRight && horizontalMovement > 0)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 ls = transform.localScale;
+            ls.x *= -1f;
+            transform.localScale = ls;
         }
     }
 
