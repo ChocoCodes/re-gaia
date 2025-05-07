@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMovement;
     bool isFacingRight = true;
     private bool canMove = true;
+    private float cachedInput = 0f;
 
     [Header("Jumping")]
     public float jumpPower = 10f;
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    /*
+    
         if (canMove)
         {
             rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
@@ -39,8 +40,8 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             horizontalMovement = 0f;
         }
-       */
-        rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
+
+        //rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
        
         Gravity();
         Flip();
@@ -50,14 +51,22 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Move(InputAction.CallbackContext context)
-    {
+    {/*
         if (!canMove)
         {
             horizontalMovement = 0f;
             return;
         }
 
-        horizontalMovement = context.ReadValue<Vector2>().x;
+        horizontalMovement = context.ReadValue<Vector2>().x;*/
+         cachedInput = context.ReadValue<Vector2>().x;
+
+        if (!canMove)
+        {
+            return;
+        }
+
+        horizontalMovement = cachedInput;
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -117,6 +126,16 @@ public class PlayerMovement : MonoBehaviour
     public void SetCanMove(bool value)
     {
         canMove = value;
+
+        if (canMove)
+        {
+             // Restore cached movement input
+            horizontalMovement = cachedInput;
+        }
+        else
+        {
+            horizontalMovement = 0f;
+        }
     }
 
     //Visualize Ground Check

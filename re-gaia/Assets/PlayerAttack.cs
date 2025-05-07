@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Attack")]
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+    private int currentIndex = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,8 +29,10 @@ public class PlayerAttack : MonoBehaviour
 
         movement.SetCanMove(false);
 
+        animator.SetInteger("attackIndex", currentIndex);
         animator.SetTrigger("attack");
         nextAttackTime = Time.time + 1f / attackRate;
+        currentIndex = 1 - currentIndex;
     }
 
     public void EndAttack()
