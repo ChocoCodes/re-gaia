@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 802297819ba48144c83b4aa4c1f04552
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4499261670656511779
+    second: GroundAttacking1_0
+  - first:
+      213: 9102009153487837024
+    second: GroundAttacking1_1
+  - first:
+      213: -3620163443899037631
+    second: GroundAttacking1_2
+  - first:
+      213: -4190072782576671020
+    second: GroundAttacking1_3
+  - first:
+      213: 6130280146350215955
+    second: GroundAttacking1_4
+  - first:
+      213: -8520312708372630377
+    second: GroundAttacking1_5
+  - first:
+      213: -4082512897560108843
+    second: GroundAttacking1_6
+  - first:
+      213: -4173722255190710342
+    second: GroundAttacking1_7
+  - first:
+      213: 4484395181277308655
+    second: GroundAttacking1_8
+  - first:
+      213: -6719487523214001758
+    second: GroundAttacking1_9
+  - first:
+      213: -247012537465541155
+    second: GroundAttacking1_10
+  - first:
+      213: -3979397052259049013
+    second: GroundAttacking1_11
+  - first:
+      213: -801762488921417332
+    second: GroundAttacking1_12
+  - first:
+      213: 6901200797275451782
+    second: GroundAttacking1_13
+  - first:
+      213: 9156829064912244274
+    second: GroundAttacking1_14
+  - first:
+      213: 3911367547551566371
+    second: GroundAttacking1_15
+  - first:
+      213: 8535124659852022366
+    second: GroundAttacking1_16
+  - first:
+      213: 9028064839908766729
+    second: GroundAttacking1_17
+  - first:
+      213: 13515575896996825
+    second: GroundAttacking1_18
+  - first:
+      213: -4018255625958041587
+    second: GroundAttacking1_19
+  - first:
+      213: -1615059763367838189
+    second: GroundAttacking1_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GroundAttacking1_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faab4c91c98766f42a7f3da7b81b198f
+      internalID: 9102009153487837024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundAttacking1_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7918d196198a0f748af5c58363424cdd
+      internalID: -3620163443899037631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundAttacking1_4
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ecd3d765e982b447a7a421fe7ef48df
+      internalID: 6130280146350215955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundAttacking1_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15040fbde25b1fc40b8f199fe3743873
+      internalID: 4484395181277308655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundAttacking1_12
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd8cdba7ea3b6144b27cf430fc2c7e0
+      internalID: -801762488921417332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundAttacking1_16
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6a833f9d50a1e4c8821e83fafe1b2f
+      internalID: 8535124659852022366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundAttacking1_20
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee581f464a7040458b85a0d04449946
+      internalID: -1615059763367838189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundAttacking1_24
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d92d343e06e6454895dd64f0c4d8b2a
+      internalID: 970247589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 31cb841a14660d34f989e3df728c346f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GroundAttacking1_0: 932262570
+      GroundAttacking1_1: 9102009153487837024
+      GroundAttacking1_10: 1574538700
+      GroundAttacking1_11: -466732113
+      GroundAttacking1_12: -801762488921417332
+      GroundAttacking1_13: -1950981288
+      GroundAttacking1_14: 1540396169
+      GroundAttacking1_15: 470472820
+      GroundAttacking1_16: 8535124659852022366
+      GroundAttacking1_17: 144135736
+      GroundAttacking1_18: 446902080
+      GroundAttacking1_19: -1467582284
+      GroundAttacking1_2: -3620163443899037631
+      GroundAttacking1_20: -1615059763367838189
+      GroundAttacking1_21: 1979822797
+      GroundAttacking1_22: -752968774
+      GroundAttacking1_23: -861454443
+      GroundAttacking1_24: 970247589
+      GroundAttacking1_25: 1814950014
+      GroundAttacking1_26: 1565049401
+      GroundAttacking1_3: -934421544
+      GroundAttacking1_4: 6130280146350215955
+      GroundAttacking1_5: -401069704
+      GroundAttacking1_6: 1140246463
+      GroundAttacking1_7: 242472548
+      GroundAttacking1_8: 4484395181277308655
+      GroundAttacking1_9: -1053146739
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
