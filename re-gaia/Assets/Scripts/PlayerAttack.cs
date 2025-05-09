@@ -11,32 +11,30 @@ public class PlayerAttack : MonoBehaviour
     float nextAttackTime = 0f;
     private int currentIndex = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Attack(InputAction.CallbackContext context)
     {
         if (Time.time < nextAttackTime) return;
 
         movement.SetCanMove(false);
 
-        animator.SetInteger("attackIndex", currentIndex);
-        animator.SetTrigger("attack");
+        if (movement.isGrounded())
+        {
+            animator.SetInteger("attackIndex", currentIndex);
+            animator.SetTrigger("attack");
+            currentIndex = 1 - currentIndex;
+        }
+        else
+        {
+            animator.SetTrigger("jumpAttack");
+            movement.isJumpAttacking = true;
+        }
+
         nextAttackTime = Time.time + 1f / attackRate;
-        currentIndex = 1 - currentIndex;
     }
 
     public void EndAttack()
     {
+        movement.isJumpAttacking = false;
         movement.SetCanMove(true);
     }
 }
