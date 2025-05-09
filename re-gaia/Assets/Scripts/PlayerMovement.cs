@@ -15,6 +15,15 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jumping")]
     public float jumpPower = 10f;
+    public bool isJumpAttacking = false;
+
+    [Header("Dash")]
+    public float dashSpeed = 20f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 1f;
+    private bool isDashing = false;
+    private float dashTime;
+    private float dashCooldownTimer;
 
     [Header("GroundCheck")]
     public Transform groundCheckPos;
@@ -30,7 +39,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        if (dashCooldownTimer > 0f) dashCooldownTimer -= Time.deltaTime;
+
+        if (isDashing)
+        {
+            rb.linearVelocity = new Vector2((isFacingRight ? 1 : -1) * dashSpeed, 0f);
+            dashTime -= Time.deltaTime;
+
+            if (dashTime <= 0f)
+            {
+               isDashing = false;
+            }
+
+            return;
+        }
+
         if (canMove)
         {
             rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
@@ -59,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         horizontalMovement = context.ReadValue<Vector2>().x;*/
-         cachedInput = context.ReadValue<Vector2>().x;
+        cachedInput = context.ReadValue<Vector2>().x;
 
         if (!canMove)
         {
@@ -89,8 +112,27 @@ public class PlayerMovement : MonoBehaviour
         */
     }
 
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if (context.performed && !isDashing && dashCooldownTimer <= 0f && canMove)
+        {
+            isDashing = true;
+            dashTime = dashDuration;
+            dashCooldownTimer = dashCooldown;
+            animator.SetTrigger("dash");
+        }
+    }
+
+
     private void Gravity()
     {
+        if (isJumpAttacking)
+        {
+           rb.gravityScale = 0f;
+           rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+           return;
+        }
+
         if (rb.linearVelocity.y < 0)
         {
             rb.gravityScale = baseGravity * fallSpeedMultiplier;
@@ -113,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool isGrounded()
+    public bool isGrounded()
     {
         if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
         {
