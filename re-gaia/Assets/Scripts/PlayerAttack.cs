@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public Animator animator;
 
     [Header("Attack")]
+    public int attackDamage = 20;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
     private int currentIndex = 0;
@@ -36,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Hit" + enemy.name);
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
 
         nextAttackTime = Time.time + 1f / attackRate;
