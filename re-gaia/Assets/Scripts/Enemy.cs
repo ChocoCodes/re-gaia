@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public HealthBar enemyHealthBar;
 
     [Header("Enemy")]
     public int maxHealth = 100;
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        enemyHealthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        enemyHealthBar.SetHealth(currentHealth);
 
         StartCoroutine(FlashWhite());
 
@@ -39,6 +42,7 @@ public class Enemy : MonoBehaviour
         animator.SetBool("isDead", true);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        Destroy(enemyHealthBar.gameObject);
     }
 
     private IEnumerator FlashWhite()
