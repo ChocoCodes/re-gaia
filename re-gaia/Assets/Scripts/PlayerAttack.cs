@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (Time.time < nextAttackTime) return;
+        if (Time.time < nextAttackTime || IsDashing()) return;
 
         movement.SetCanMove(false);
 
@@ -41,6 +41,11 @@ public class PlayerAttack : MonoBehaviour
         }
 
         nextAttackTime = Time.time + 1f / attackRate;
+    }
+
+    private bool IsDashing()
+    {
+        return movement.IsDashing();
     }
 
     public void EndAttack()

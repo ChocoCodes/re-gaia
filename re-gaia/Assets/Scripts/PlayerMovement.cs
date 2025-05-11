@@ -84,12 +84,10 @@ public class PlayerMovement : MonoBehaviour
         horizontalMovement = context.ReadValue<Vector2>().x;*/
         cachedInput = context.ReadValue<Vector2>().x;
 
-        if (!canMove)
+        if (canMove)
         {
-            return;
+            horizontalMovement = cachedInput;
         }
-
-        horizontalMovement = cachedInput;
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -121,6 +119,11 @@ public class PlayerMovement : MonoBehaviour
             dashCooldownTimer = dashCooldown;
             animator.SetTrigger("dash");
         }
+    }
+
+    public bool IsDashing()
+    {
+       return isDashing;
     }
 
 
@@ -173,10 +176,6 @@ public class PlayerMovement : MonoBehaviour
         {
              // Restore cached movement input
             horizontalMovement = cachedInput;
-        }
-        else
-        {
-            horizontalMovement = 0f;
         }
     }
 
