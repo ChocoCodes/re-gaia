@@ -40,9 +40,11 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         animator.SetBool("isDead", true);
+        GetComponent<EnemyPatrol>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         Destroy(enemyHealthBar.gameObject);
+        Destroy(GetComponent<Rigidbody2D>());
     }
 
     private IEnumerator FlashWhite()
