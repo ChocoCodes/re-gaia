@@ -1,14 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
+    public HealthBar playerHealthBar;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
-    public HealthBar enemyHealthBar;
 
-    [Header("Enemy")]
-    public int damage = 15;
+    [Header("Health")]
     public int maxHealth = 100;
     int currentHealth;
 
@@ -16,19 +15,22 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        enemyHealthBar.SetMaxHealth(maxHealth);
+        playerHealthBar.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy)
+        {
+            TakeDamage(enemy.damage);
+        }
     }
 
-    public void TakeDamage(int damage)
+    private void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        enemyHealthBar.SetHealth(currentHealth);
+        playerHealthBar.SetHealth(currentHealth);
 
         StartCoroutine(FlashWhite());
 
@@ -40,18 +42,12 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        animator.SetBool("isDead", true);
-        GetComponent<EnemyPatrol>().enabled = false;
-
-        CapsuleCollider2D[] colliders = GetComponents<CapsuleCollider2D>();
-        foreach (CapsuleCollider2D collider in colliders)
-        {
-            collider.enabled = false;  
-        }
-
-        this.enabled = false;
-        Destroy(enemyHealthBar.gameObject);
+        animator.SetTrigger("death");
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerAttack>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         Destroy(GetComponent<Rigidbody2D>());
+        this.enabled = false;
     }
 
     private IEnumerator FlashWhite()
