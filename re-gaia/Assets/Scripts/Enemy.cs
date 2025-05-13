@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
     public HealthBar enemyHealthBar;
 
     [Header("Enemy")]
-    public int damage = 15;
     public int maxHealth = 100;
     int currentHealth;
 

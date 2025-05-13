@@ -18,16 +18,7 @@ public class PlayerHealth : MonoBehaviour
         playerHealthBar.SetMaxHealth(maxHealth);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy)
-        {
-            TakeDamage(enemy.damage);
-        }
-    }
-
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         playerHealthBar.SetHealth(currentHealth);
