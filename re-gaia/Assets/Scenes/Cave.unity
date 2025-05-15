@@ -3158,9 +3158,9 @@ GameObject:
   - component: {fileID: 1601481915}
   - component: {fileID: 1601481914}
   - component: {fileID: 1601481920}
+  - component: {fileID: 1601481921}
   - component: {fileID: 1601481919}
   - component: {fileID: 1601481918}
-  - component: {fileID: 1601481921}
   m_Layer: 6
   m_Name: SanctuaryEnemy
   m_TagString: Untagged
@@ -3183,7 +3183,7 @@ MonoBehaviour:
   animator: {fileID: 1601481915}
   spriteRenderer: {fileID: 1601481916}
   enemyHealthBar: {fileID: 1182998681}
-  maxHealth: 200
+  maxHealth: 150
 --- !u!95 &1601481915
 Animator:
   serializedVersion: 7
@@ -3353,6 +3353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1708115deb6fe41b1bf3a6d4eb20e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   patrolSpeed: 2
   pointA: {fileID: 149816078}
   pointB: {fileID: 2104316410}
@@ -3370,11 +3371,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6270bbfb04fc78f439ec90ba03177c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1601481915}
   damage: 15
   detectionRange: 5
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  patrol: {fileID: 1601481920}
 --- !u!1 &1707679599
 GameObject:
   m_ObjectHideFlags: 0

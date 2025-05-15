@@ -1,0 +1,976 @@
+fileFormatVersion: 2
+guid: ac14f725fbd972046ad0ba868adcb8be
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7671898505414016405
+    second: Enemy_City_Attack_0
+  - first:
+      213: 5705460340198562949
+    second: Enemy_City_Attack_1
+  - first:
+      213: 1222018589093981488
+    second: Enemy_City_Attack_2
+  - first:
+      213: -8238260928003506565
+    second: Enemy_City_Attack_3
+  - first:
+      213: -4033227081720887769
+    second: Enemy_City_Attack_4
+  - first:
+      213: 444585066358807232
+    second: Enemy_City_Attack_5
+  - first:
+      213: -5198025249570412242
+    second: Enemy_City_Attack_6
+  - first:
+      213: 4157887547423478909
+    second: Enemy_City_Attack_7
+  - first:
+      213: -8377680604985938422
+    second: Enemy_City_Attack_8
+  - first:
+      213: 3323875624314699479
+    second: Enemy_City_Attack_9
+  - first:
+      213: -2587060100157051169
+    second: Enemy_City_Attack_10
+  - first:
+      213: 8493740952634465664
+    second: Enemy_City_Attack_11
+  - first:
+      213: 2766832443873525516
+    second: Enemy_City_Attack_12
+  - first:
+      213: -5242371805072166827
+    second: Enemy_City_Attack_13
+  - first:
+      213: 6238763792123789667
+    second: Enemy_City_Attack_14
+  - first:
+      213: 4780260570806754500
+    second: Enemy_City_Attack_15
+  - first:
+      213: -2193618349977028392
+    second: Enemy_City_Attack_16
+  - first:
+      213: 8911950308105102599
+    second: Enemy_City_Attack_17
+  - first:
+      213: 4840866265818071238
+    second: Enemy_City_Attack_18
+  - first:
+      213: 5704601296190904322
+    second: Enemy_City_Attack_19
+  - first:
+      213: 9023133037655487427
+    second: Enemy_City_Attack_20
+  - first:
+      213: 6334529738097072603
+    second: Enemy_City_Attack_21
+  - first:
+      213: 5556351355052787545
+    second: Enemy_City_Attack_22
+  - first:
+      213: 5884380123202282575
+    second: Enemy_City_Attack_23
+  - first:
+      213: -2506070956519877198
+    second: Enemy_City_Attack_24
+  - first:
+      213: 3226201503826286156
+    second: Enemy_City_Attack_25
+  - first:
+      213: 2966788908877785530
+    second: Enemy_City_Attack_26
+  - first:
+      213: 2374854812868036471
+    second: Enemy_City_Attack_27
+  - first:
+      213: 785446542382564330
+    second: Enemy_City_Attack_28
+  - first:
+      213: -1557109749574078798
+    second: Enemy_City_Attack_29
+  - first:
+      213: 2186129996193664138
+    second: Enemy_City_Attack_30
+  - first:
+      213: 1616277678341149811
+    second: Enemy_City_Attack_31
+  - first:
+      213: 413973640776080225
+    second: Enemy_City_Attack_32
+  - first:
+      213: 1874405118332458351
+    second: Enemy_City_Attack_33
+  - first:
+      213: 4314986074615497994
+    second: Enemy_City_Attack_34
+  - first:
+      213: -2418581278934408876
+    second: Enemy_City_Attack_35
+  - first:
+      213: -8115573010072641585
+    second: Enemy_City_Attack_36
+  - first:
+      213: -3583693178141890792
+    second: Enemy_City_Attack_37
+  - first:
+      213: 246795614796429050
+    second: Enemy_City_Attack_38
+  - first:
+      213: -4246791803212865642
+    second: Enemy_City_Attack_39
+  - first:
+      213: -5681384544885158359
+    second: Enemy_City_Attack_40
+  - first:
+      213: -7271624380534976326
+    second: Enemy_City_Attack_41
+  - first:
+      213: -627561288562028346
+    second: Enemy_City_Attack_42
+  - first:
+      213: 3287623450390557588
+    second: Enemy_City_Attack_43
+  - first:
+      213: -4767831069397324633
+    second: Enemy_City_Attack_44
+  - first:
+      213: -1743409341460497402
+    second: Enemy_City_Attack_45
+  - first:
+      213: -8066373150058578125
+    second: Enemy_City_Attack_46
+  - first:
+      213: 4654511867601453778
+    second: Enemy_City_Attack_47
+  - first:
+      213: 1557169150864920338
+    second: Enemy_City_Attack_48
+  - first:
+      213: -8578434823873579386
+    second: Enemy_City_Attack_49
+  - first:
+      213: -5066263126103313771
+    second: Enemy_City_Attack_50
+  - first:
+      213: -7565934494356589117
+    second: Enemy_City_Attack_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy_City_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d7d001b0f087a60800000000000000
+      internalID: 7671898505414016405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58c5d9953fddd2f40800000000000000
+      internalID: 5705460340198562949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03deed7ae6b75f010800000000000000
+      internalID: 1222018589093981488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7efe5b8551dbad80800000000000000
+      internalID: -8238260928003506565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 0
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7268a8f86591708c0800000000000000
+      internalID: -4033227081720887769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 0
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca92c823cb7b2600800000000000000
+      internalID: 444585066358807232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 0
+        width: 53
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2928d96397ecd7b0800000000000000
+      internalID: -5198025249570412242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d745238e1b8c3b930800000000000000
+      internalID: 4157887547423478909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 0
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d17f70564dfd570800000000000000
+      internalID: 8493740952634465664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc1eb889a5e65240800000000000000
+      internalID: 4780260570806754500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_17
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 0
+        width: 51
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705a982769b9dab70800000000000000
+      internalID: 8911950308105102599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_19
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20811b497a0da2f40800000000000000
+      internalID: 5704601296190904322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_21
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd99c6a2c35c8e750800000000000000
+      internalID: 6334529738097072603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_23
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 0
+        width: 51
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4467d69b8489a150800000000000000
+      internalID: 5884380123202282575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_25
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 0
+        width: 51
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c469561bc25c5cc20800000000000000
+      internalID: 3226201503826286156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_27
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 777402aaedd25f020800000000000000
+      internalID: 2374854812868036471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_29
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bee654cee8046ae0800000000000000
+      internalID: -1557109749574078798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_31
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 374daeb2cfb2e6610800000000000000
+      internalID: 1616277678341149811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_33
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65516b2689330a10800000000000000
+      internalID: 1874405118332458351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_35
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45164b814297f6ed0800000000000000
+      internalID: -2418581278934408876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_37
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 0
+        width: 57
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817acdcaa0a244ec0800000000000000
+      internalID: -3583693178141890792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_39
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 0
+        width: 59
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69fd47efa5d5015c0800000000000000
+      internalID: -4246791803212865642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_41
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 0
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab094221720061b90800000000000000
+      internalID: -7271624380534976326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_42
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 0
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c0597045547a47f0800000000000000
+      internalID: -627561288562028346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_43
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 0
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 493f5cb0c1cff9d20800000000000000
+      internalID: 3287623450390557588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_44
+      rect:
+        serializedVersion: 2
+        x: 2012
+        y: 0
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac608747e245ddb0800000000000000
+      internalID: -4767831069397324633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_45
+      rect:
+        serializedVersion: 2
+        x: 2091
+        y: 0
+        width: 46
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60c3620e07a2ec7e0800000000000000
+      internalID: -1743409341460497402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_46
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 0
+        width: 46
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f72058b5c7e0090800000000000000
+      internalID: -8066373150058578125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_City_Attack_47
+      rect:
+        serializedVersion: 2
+        x: 2253
+        y: 0
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2893702e5289040800000000000000
+      internalID: 4654511867601453778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f57cfd597e93e6146adeab5668e77e45
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Enemy_City_Attack_0: 7671898505414016405
+      Enemy_City_Attack_1: 5705460340198562949
+      Enemy_City_Attack_10: -2587060100157051169
+      Enemy_City_Attack_11: 8493740952634465664
+      Enemy_City_Attack_12: 2766832443873525516
+      Enemy_City_Attack_13: -5242371805072166827
+      Enemy_City_Attack_14: 6238763792123789667
+      Enemy_City_Attack_15: 4780260570806754500
+      Enemy_City_Attack_16: -2193618349977028392
+      Enemy_City_Attack_17: 8911950308105102599
+      Enemy_City_Attack_18: 4840866265818071238
+      Enemy_City_Attack_19: 5704601296190904322
+      Enemy_City_Attack_2: 1222018589093981488
+      Enemy_City_Attack_20: 9023133037655487427
+      Enemy_City_Attack_21: 6334529738097072603
+      Enemy_City_Attack_22: 5556351355052787545
+      Enemy_City_Attack_23: 5884380123202282575
+      Enemy_City_Attack_24: -2506070956519877198
+      Enemy_City_Attack_25: 3226201503826286156
+      Enemy_City_Attack_26: 2966788908877785530
+      Enemy_City_Attack_27: 2374854812868036471
+      Enemy_City_Attack_28: 785446542382564330
+      Enemy_City_Attack_29: -1557109749574078798
+      Enemy_City_Attack_3: -8238260928003506565
+      Enemy_City_Attack_30: 2186129996193664138
+      Enemy_City_Attack_31: 1616277678341149811
+      Enemy_City_Attack_32: 413973640776080225
+      Enemy_City_Attack_33: 1874405118332458351
+      Enemy_City_Attack_34: 4314986074615497994
+      Enemy_City_Attack_35: -2418581278934408876
+      Enemy_City_Attack_36: -8115573010072641585
+      Enemy_City_Attack_37: -3583693178141890792
+      Enemy_City_Attack_38: 246795614796429050
+      Enemy_City_Attack_39: -4246791803212865642
+      Enemy_City_Attack_4: -4033227081720887769
+      Enemy_City_Attack_40: -5681384544885158359
+      Enemy_City_Attack_41: -7271624380534976326
+      Enemy_City_Attack_42: -627561288562028346
+      Enemy_City_Attack_43: 3287623450390557588
+      Enemy_City_Attack_44: -4767831069397324633
+      Enemy_City_Attack_45: -1743409341460497402
+      Enemy_City_Attack_46: -8066373150058578125
+      Enemy_City_Attack_47: 4654511867601453778
+      Enemy_City_Attack_48: 1557169150864920338
+      Enemy_City_Attack_49: -8578434823873579386
+      Enemy_City_Attack_5: 444585066358807232
+      Enemy_City_Attack_50: -5066263126103313771
+      Enemy_City_Attack_51: -7565934494356589117
+      Enemy_City_Attack_6: -5198025249570412242
+      Enemy_City_Attack_7: 4157887547423478909
+      Enemy_City_Attack_8: -8377680604985938422
+      Enemy_City_Attack_9: 3323875624314699479
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

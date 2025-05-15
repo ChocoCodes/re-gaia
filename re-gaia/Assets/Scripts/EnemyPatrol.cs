@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    public bool isPaused = false;
+
     [Header("EnemyPatrol")]
     public float patrolSpeed;
     public GameObject pointA;
@@ -12,6 +14,12 @@ public class EnemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isPaused)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         Vector2 point = currentPoint.position - transform.position;
 
         if (currentPoint == pointB.transform)

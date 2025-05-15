@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class SanctuaryEnemyAttack : MonoBehaviour
 {
+    public Animator animator;
+
     [Header("Sanctuary Enemy Attack")]
     public int damage = 15;
     public float detectionRange = 5f;
     public LayerMask playerLayer;
     private Transform player;
+    public EnemyPatrol patrol;
+    public bool isAttacking;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,10 +21,14 @@ public class SanctuaryEnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInSight())
+        patrol.isPaused = PlayerInSight() || isAttacking;
+
+        if (PlayerInSight() && !isAttacking)
         {
             //ShootAtPlayer();
             Debug.Log("Player in range");
+            isAttacking = true;
+            animator.SetTrigger("attack");
         }
     }
 
@@ -34,6 +42,11 @@ public class SanctuaryEnemyAttack : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void EndAttack()
+    {
+        isAttacking = false;
     }
 
     private void OnDrawGizmosSelected()
