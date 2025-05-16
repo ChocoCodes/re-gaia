@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     [Header("Sanctuary Enemy Attack")]
     public int damage = 5;
     public float lifetime = 3f;
+    public float knockbackForce = 5f;
+    public float knockbackDuration = 0.2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,7 +29,7 @@ public class Bullet : MonoBehaviour
         PlayerHealth player = collision.GetComponent<PlayerHealth>();
         if (player)
         {
-            player.TakeDamage(damage);
+            player.TakeDamage(damage, knockbackForce, knockbackDuration);
             Destroy(gameObject);
         }
     }

@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMovement;
     bool isFacingRight = true;
     private bool canMove = true;
+    public bool isKnockedback = false;
     private float cachedInput = 0f;
 
     [Header("Jumping")]
@@ -39,6 +40,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isKnockedback)
+        {
+            Gravity();
+            animator.SetFloat("yVelocity", rb.linearVelocity.y);
+            animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
+            return;
+        }
+
         if (dashCooldownTimer > 0f) dashCooldownTimer -= Time.deltaTime;
 
         if (isDashing)
