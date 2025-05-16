@@ -281,8 +281,9 @@ MonoBehaviour:
   animator: {fileID: 912189110115886840}
   spriteRenderer: {fileID: 3567212044254245914}
   enemyHealthBar: {fileID: 2796532291187371544}
-  damage: 10
+  patrol: {fileID: 304618519112795828}
   maxHealth: 100
+  pauseOnHitDuration: 0.3
 --- !u!114 &304618519112795828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1708115deb6fe41b1bf3a6d4eb20e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   patrolSpeed: 2
   pointA: {fileID: 0}
   pointB: {fileID: 0}
@@ -339,6 +341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed44091df8c3184e91dcc0468b9624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 15
+  knockbackForce: 2
+  knockbackDuration: 0.2
 --- !u!1 &3705457213453239196
 GameObject:
   m_ObjectHideFlags: 0

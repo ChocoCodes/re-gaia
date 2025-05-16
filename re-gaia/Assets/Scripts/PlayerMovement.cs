@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(transform.localScale.x);
         if (isKnockedback)
         {
             Gravity();

@@ -518,7 +518,9 @@ MonoBehaviour:
   animator: {fileID: 4117383675955546770}
   spriteRenderer: {fileID: 293439288970171992}
   enemyHealthBar: {fileID: 7946979773867132505}
+  patrol: {fileID: 8062732585706948069}
   maxHealth: 150
+  pauseOnHitDuration: 0
 --- !u!114 &8062732585706948069
 MonoBehaviour:
   m_ObjectHideFlags: 0

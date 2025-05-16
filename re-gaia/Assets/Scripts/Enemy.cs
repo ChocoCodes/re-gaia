@@ -6,9 +6,11 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public HealthBar enemyHealthBar;
+    public EnemyPatrol patrol;
 
     [Header("Enemy")]
     public int maxHealth = 100;
+    public float pauseOnHitDuration = 0.3f;
     int currentHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,7 +36,10 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            return;
         }
+
+        StartCoroutine(PausePatrol(pauseOnHitDuration));
     }
 
     private void Die()
@@ -51,6 +56,13 @@ public class Enemy : MonoBehaviour
         this.enabled = false;
         Destroy(enemyHealthBar.gameObject);
         Destroy(GetComponent<Rigidbody2D>());
+    }
+
+    private IEnumerator PausePatrol(float pauseDuration)
+    {
+        patrol.isPaused = true;
+        yield return new WaitForSeconds(pauseDuration);
+        patrol.isPaused = false;
     }
 
     private IEnumerator FlashWhite()

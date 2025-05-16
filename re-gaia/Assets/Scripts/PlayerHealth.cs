@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
         playerHealthBar.SetMaxHealth(maxHealth);
     }
 
-    public void TakeDamage(int damage, float knockbackForce, float knockbackDuration)
+    public void TakeDamage(int damage, float knockbackForce, float knockbackDuration, Vector2 damageSource)
     {
         currentHealth -= damage;
         playerHealthBar.SetHealth(currentHealth);
@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         animator.SetTrigger("takeDamage");
-        StartCoroutine(ApplyKnockback(knockbackForce, knockbackDuration));
+        StartCoroutine(ApplyKnockback(knockbackForce, knockbackDuration, damageSource));
     }
 
     private void Die()
@@ -47,13 +47,20 @@ public class PlayerHealth : MonoBehaviour
         this.enabled = false;
     }
 
-    private IEnumerator ApplyKnockback(float knockbackForce, float knockbackDuration)
+    private IEnumerator ApplyKnockback(float knockbackForce, float knockbackDuration, Vector2 damageSource)
     {
      //Debug.Log($"Applying knockback: Force={knockbackForce}, Duration={knockbackDuration}");
+        if (currentHealth <= 0) yield break;
+        
         movement.isKnockedback = true;
         movement.SetCanMove(false);
 
-        float direction = -Mathf.Sign(transform.localScale.x);
+        /*float direction = transform.localScale.x < 0 ?
+            Mathf.Sign(transform.localScale.x) :
+            -Mathf.Sign(transform.localScale.x);*/
+
+        float direction = Mathf.Sign(transform.position.x - damageSource.x);
+
         Vector2 knockbackVector = new Vector2(direction * knockbackForce, 0);
 
         rb.linearVelocity = Vector2.zero;
