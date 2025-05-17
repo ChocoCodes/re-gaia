@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float cachedInput = 0f;
 
     [Header("Jumping")]
-    public float jumpPower = 10f;
+    public float jumpPower = 20f;
     public bool isJumpAttacking = false;
 
     [Header("Dash")]
