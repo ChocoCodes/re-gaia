@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 643602ead57668a4dad62aa51c773887
+guid: 42f3c00477c6abf488f9e05382c257e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -113069871604110936
-    second: Walking_Sanctuary_0
+      213: 4585660035072468257
+    second: Walking_Attacking_Sanctuary_0
   - first:
-      213: 5756997018468743180
-    second: Walking_Sanctuary_1
+      213: 2461648632530573724
+    second: Walking_Attacking_Sanctuary_1
   - first:
-      213: -3052800403597421949
-    second: Walking_Sanctuary_2
+      213: 5578313625116134613
+    second: Walking_Attacking_Sanctuary_2
   - first:
-      213: 4853940986073512265
-    second: Walking_Sanctuary_3
+      213: 8952437542846075401
+    second: Walking_Attacking_Sanctuary_3
+  - first:
+      213: -4518977469583865946
+    second: Walking_Attacking_Sanctuary_4
+  - first:
+      213: 2445856122369353396
+    second: Walking_Attacking_Sanctuary_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,12 +128,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walking_Sanctuary_0
+      name: Walking_Attacking_Sanctuary_0
       rect:
         serializedVersion: 2
-        x: 27
+        x: 30
         y: 0
-        width: 24
+        width: 32
         height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -137,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a9ec340d8b4e6ef0800000000000000
-      internalID: -113069871604110936
+      spriteID: 125233b818983af30800000000000000
+      internalID: 4585660035072468257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walking_Sanctuary_1
+      name: Walking_Attacking_Sanctuary_1
       rect:
         serializedVersion: 2
-        x: 107
+        x: 110
         y: 0
-        width: 24
+        width: 33
         height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -159,19 +165,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c08ffc25946f4ef40800000000000000
-      internalID: 5756997018468743180
+      spriteID: c999fcf8368892220800000000000000
+      internalID: 2461648632530573724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walking_Sanctuary_2
+      name: Walking_Attacking_Sanctuary_2
       rect:
         serializedVersion: 2
-        x: 187
+        x: 190
         y: 0
-        width: 24
+        width: 33
         height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -181,17 +187,61 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3821865153642a5d0800000000000000
-      internalID: -3052800403597421949
+      spriteID: 5dcc4c6dfa62a6d40800000000000000
+      internalID: 5578313625116134613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walking_Sanctuary_3
+      name: Walking_Attacking_Sanctuary_3
       rect:
         serializedVersion: 2
-        x: 267
+        x: 270
+        y: 0
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902163f53827d3c70800000000000000
+      internalID: 8952437542846075401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Attacking_Sanctuary_4
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7c5791fed5941c0800000000000000
+      internalID: -4518977469583865946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Attacking_Sanctuary_5
+      rect:
+        serializedVersion: 2
+        x: 427
         y: 0
         width: 24
         height: 36
@@ -203,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 949fe9b0c99ac5340800000000000000
-      internalID: 4853940986073512265
+      spriteID: 4b62a814f2d61f120800000000000000
+      internalID: 2445856122369353396
       vertices: []
       indices: 
       edges: []
@@ -213,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3d92c6d1f8690794c9b283d474175109
+    spriteID: c1ec204cc89a30d4c91675406af01982
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Walking_Sanctuary_0: -113069871604110936
-      Walking_Sanctuary_1: 5756997018468743180
-      Walking_Sanctuary_2: -3052800403597421949
-      Walking_Sanctuary_3: 4853940986073512265
+      Walking_Attacking_Sanctuary_0: 4585660035072468257
+      Walking_Attacking_Sanctuary_1: 2461648632530573724
+      Walking_Attacking_Sanctuary_2: 5578313625116134613
+      Walking_Attacking_Sanctuary_3: 8952437542846075401
+      Walking_Attacking_Sanctuary_4: -4518977469583865946
+      Walking_Attacking_Sanctuary_5: 2445856122369353396
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

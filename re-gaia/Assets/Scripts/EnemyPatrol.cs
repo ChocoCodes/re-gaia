@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour
 {
     public bool isPaused = false;
+    public bool isChasing = false;
 
     [Header("EnemyPatrol")]
     public float patrolSpeed;
@@ -14,7 +15,7 @@ public class EnemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPaused)
+        if (isPaused || isChasing)
         {
             rb.linearVelocity = Vector2.zero;
             return;
@@ -31,6 +32,13 @@ public class EnemyPatrol : MonoBehaviour
             rb.linearVelocity = new Vector2(-patrolSpeed, 0);
         }
 
+        FaceByVelocity();
+
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f)
+        {
+            currentPoint = (currentPoint == pointB.transform) ? pointA.transform : pointB.transform;
+        }
+/*
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
         {
             Flip();
@@ -40,14 +48,30 @@ public class EnemyPatrol : MonoBehaviour
         {
             Flip();
             currentPoint = pointB.transform;
-        }
+        }*/
     }
-
+/*
     private void Flip()
     {
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+    }
+    */
+    private void FaceByVelocity()
+    {
+        float vx = rb.linearVelocity.x;
+        if (Mathf.Abs(vx) < 0.01f) return;
+
+        bool movingRight = vx > 0f;
+        bool facingRight = transform.localScale.x > 0f;
+
+        if (movingRight != facingRight)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
     }
     
     private void OnDrawGizmos()
