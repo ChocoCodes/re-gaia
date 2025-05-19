@@ -36,7 +36,6 @@ public class SanctuaryEnemyAttack : MonoBehaviour
 
         if (PlayerInSight() && !isAttacking)
         {
-            //ShootAtPlayer();
             isAttacking = true;
             animator.SetTrigger("attack");
         }

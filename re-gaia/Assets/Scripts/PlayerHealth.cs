@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Health")]
     public int maxHealth = 100;
-    int currentHealth;
+    private int currentHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,6 +45,11 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         Destroy(GetComponent<Rigidbody2D>());
         this.enabled = false;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
     }
 
     private IEnumerator ApplyKnockback(float knockbackForce, float knockbackDuration, Vector2 damageSource)
