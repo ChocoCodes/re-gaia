@@ -34963,7 +34963,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 732941493}
   m_Enabled: 1
   serializedVersion: 3
@@ -41858,17 +41857,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 733996759845721854, guid: dcf3d57b3838eac418e51d6ffc548bc7, type: 3}
   m_PrefabInstance: {fileID: 969245069}
   m_PrefabAsset: {fileID: 0}
-=======
-  m_GameObject: {fileID: 960950150}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.8, y: 2.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1875274054}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 83341b483cbb90c92fe3bf2cd009a3c8e1d383b3
 --- !u!1 &973263874
 GameObject:
   m_ObjectHideFlags: 0
