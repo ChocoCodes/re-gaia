@@ -15,9 +15,14 @@ public class EnemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPaused || isChasing)
+        if (isPaused)
         {
             rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        if (isChasing)
+        {
             return;
         }
 

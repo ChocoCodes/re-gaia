@@ -4,7 +4,7 @@ using UnityEngine;
 public class CliffEnemyAttack : MonoBehaviour
 {
     public Animator animator;
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
     public bool isDead;
 
     [Header("Cliff Enemy Attack")]
@@ -31,7 +31,7 @@ public class CliffEnemyAttack : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -68,7 +68,6 @@ public class CliffEnemyAttack : MonoBehaviour
             exitEdgeTime = Time.time + edgeCooldown;
             return;
         }
-
         patrol.isChasing = true;
         animator.SetBool("isAttacking", true);
 
@@ -76,6 +75,7 @@ public class CliffEnemyAttack : MonoBehaviour
         direction.y = 0;
 
         rb.linearVelocity = direction.normalized * chaseSpeed;
+        Debug.Log(rb.linearVelocity);
 
         if ((direction.x > 0 && transform.localScale.x < 0) || (direction.x < 0 && transform.localScale.x > 0))
         {
