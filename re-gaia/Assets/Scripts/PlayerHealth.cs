@@ -37,6 +37,21 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(ApplyKnockback(knockbackForce, knockbackDuration, damageSource));
     }
 
+    // Overloaded method for taking damage without knockback - Polluted Water Zone
+    public void TakeDamage(int damage) {
+        currentHealth -= damage;
+        playerHealthBar.SetHealth(currentHealth);
+
+        StartCoroutine(FlashWhite());
+        // Check if the player is already dead
+        if (currentHealth <= 0) {
+            Die();
+            return;
+        }
+
+        animator.SetTrigger("takeDamage");
+    }
+
     private void Die()
     {
         animator.SetTrigger("isDead");

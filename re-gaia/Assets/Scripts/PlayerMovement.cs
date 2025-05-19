@@ -36,7 +36,8 @@ public class PlayerMovement : MonoBehaviour
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 2f;
 
-
+    [Header("External Modifiers")]
+    public float extSpeedMultiplier = 1f;
     // Update is called once per frame
     void Update()
     {
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (canMove)
         {
-            rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed * extSpeedMultiplier, rb.linearVelocity.y);
         }
         else
         {

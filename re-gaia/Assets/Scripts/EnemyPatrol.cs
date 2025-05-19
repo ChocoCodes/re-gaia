@@ -22,7 +22,7 @@ public class EnemyPatrol : MonoBehaviour
         }
 
         Vector2 point = currentPoint.position - transform.position;
-        Debug.Log($"{gameObject.name} | Velocity: ${rb.linearVelocity} | Distance: ${Vector2.Distance(transform.position, currentPoint.position)}");
+        // Debug.Log($"{gameObject.name} | Velocity: ${rb.linearVelocity} | Distance: ${Vector2.Distance(transform.position, currentPoint.position)}");
         if (currentPoint == pointB.transform)
         {
             rb.linearVelocity = new Vector2(patrolSpeed, 0);
