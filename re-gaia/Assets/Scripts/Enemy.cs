@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -12,6 +13,9 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public float pauseOnHitDuration = 0.3f;
     int currentHealth;
+
+    [Header("Loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,6 +51,8 @@ public class Enemy : MonoBehaviour
         animator.SetBool("isDead", true);
         GetComponent<EnemyPatrol>().enabled = false;
 
+        DropLoot();
+
         CapsuleCollider2D[] colliders = GetComponents<CapsuleCollider2D>();
         foreach (CapsuleCollider2D collider in colliders)
         {
@@ -70,5 +76,22 @@ public class Enemy : MonoBehaviour
         spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+    }
+
+    private void DropLoot() {
+        // Generate loot
+        foreach(LootItem item in lootTable) {
+            float _dropRate = Random.Range(0f, 100f);
+            if(_dropRate <= item.dropRate) {
+                InstantiateLoot(item.lootPrefab);
+                break;
+            }
+        }
+    }
+
+    private void InstantiateLoot(GameObject loot) {
+        if(loot) {
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+        }
     }
 }

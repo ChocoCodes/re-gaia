@@ -521,6 +521,9 @@ MonoBehaviour:
   patrol: {fileID: 8062732585706948069}
   maxHealth: 150
   pauseOnHitDuration: 0
+  lootTable:
+  - lootPrefab: {fileID: 5117521106252061196, guid: 83cfee5207691724ea8309095f43f53c, type: 3}
+    dropRate: 40
 --- !u!114 &8062732585706948069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
+  isChasing: 0
   patrolSpeed: 2
   pointA: {fileID: 0}
   pointB: {fileID: 0}
