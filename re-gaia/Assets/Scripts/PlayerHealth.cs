@@ -16,6 +16,11 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        InitHealth();
+    }
+
+    public void InitHealth()
+    {
         currentHealth = maxHealth;
         playerHealthBar.SetMaxHealth(maxHealth);
     }
@@ -58,8 +63,10 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
-        Destroy(GetComponent<Rigidbody2D>());
+        rb.simulated = false;
         this.enabled = false;
+        
+        StartCoroutine(GetComponent<PlayerRespawn>().Respawn(3f));
     }
 
     public int GetCurrentHealth()
