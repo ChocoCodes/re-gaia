@@ -17,11 +17,17 @@ public class Enemy : MonoBehaviour
     [Header("Loot")]
     public List<LootItem> lootTable = new List<LootItem>();
 
+    // Reference to the QuestManager - enable/disable loot drop
+    public QuestManager questManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth;
         enemyHealthBar.SetMaxHealth(maxHealth);
+        if(questManager == null) {
+            questManager = GameObject.FindGameObjectWithTag("QuestManager").GetComponent<QuestManager>();
+        }
     }
 
     // Update is called once per frame
@@ -51,7 +57,10 @@ public class Enemy : MonoBehaviour
         animator.SetBool("isDead", true);
         GetComponent<EnemyPatrol>().enabled = false;
 
-        DropLoot();
+        // Only drop loot if the quest is active and not completed
+        if(questManager && questManager.hasQuestStarted && !questManager.hasQuestCompleted) {
+            DropLoot();
+        }
 
         CapsuleCollider2D[] colliders = GetComponents<CapsuleCollider2D>();
         foreach (CapsuleCollider2D collider in colliders)
