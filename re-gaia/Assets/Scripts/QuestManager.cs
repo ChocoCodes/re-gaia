@@ -6,11 +6,13 @@ public class QuestManager : MonoBehaviour
     public bool hasQuestStarted;
     public bool hasQuestCompleted;
     public PlayerLootManager plm;
+    public EnemyRespawnManager erm;
 
     private void Start() {
         hasQuestStarted = false;
         hasQuestCompleted = false;
         plm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLootManager>();
+        erm = FindFirstObjectByType<EnemyRespawnManager>();
     }
 
     void Update() {
@@ -26,6 +28,7 @@ public class QuestManager : MonoBehaviour
         hasQuestStarted = true;
         // Debug.Log($"Quest Started {hasQuestStarted}");
         // Enable Enemy Respawn
+        erm?.RespawnEnemiesWhenQuestStart();
         // Show Quest UI and Counter
     }
 

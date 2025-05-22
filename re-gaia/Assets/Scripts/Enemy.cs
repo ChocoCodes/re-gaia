@@ -19,7 +19,9 @@ public class Enemy : MonoBehaviour
 
     // Reference to the QuestManager - enable/disable loot drop
     public QuestManager questManager;
-
+    // Track enemy state
+    public bool isAlive = true;
+    private EnemyRespawnManager respawnManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,13 +56,17 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        if(!isAlive) return;
+        isAlive = false;
+        // Disable the healthbar only
+        enemyHealthBar?.gameObject.SetActive(false);
         animator.SetBool("isDead", true);
-        GetComponent<EnemyPatrol>().enabled = false;
+        // Hide the enemy after death animation
+        StartCoroutine(HideAfterAnim());
+        // disable patrol script
+        //GetComponent<EnemyPatrol>().enabled = false;
+        patrol.enabled = false;
 
-        // Only drop loot if the quest is active and not completed
-        if(questManager && questManager.hasQuestStarted && !questManager.hasQuestCompleted) {
-            DropLoot();
-        }
 
         CapsuleCollider2D[] colliders = GetComponents<CapsuleCollider2D>();
         foreach (CapsuleCollider2D collider in colliders)
@@ -69,8 +75,21 @@ public class Enemy : MonoBehaviour
         }
 
         this.enabled = false;
-        Destroy(enemyHealthBar.gameObject);
+        // Destroy(enemyHealthBar.gameObject);
         Destroy(GetComponent<Rigidbody2D>());
+
+        // Only drop loot if the quest is active and not completed
+        if(questManager && questManager.hasQuestStarted && !questManager.hasQuestCompleted) {
+            DropLoot();
+            // Notify only the respawn manager if it exists
+            respawnManager?.OnEnemyDeath();
+        }
+
+    }
+
+    IEnumerator HideAfterAnim() {
+        yield return new WaitForSeconds(1.5f);
+        gameObject.SetActive(false);
     }
 
     private IEnumerator PausePatrol(float pauseDuration)
@@ -101,6 +120,51 @@ public class Enemy : MonoBehaviour
     private void InstantiateLoot(GameObject loot) {
         if(loot) {
             GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+        }
+    }
+
+    public void SetManager(EnemyRespawnManager manager) {
+        respawnManager = manager;
+    }
+
+    // Make this virtual for method overriding in Enemy subclasses
+    public void Respawn() {
+        // Mark the enemy as alive
+        animator.SetBool("isDead", false);
+        isAlive = true;
+        // Set to max health
+        currentHealth = maxHealth;
+        // enable patrol script and set trigger to move
+        patrol.enabled = true;
+        gameObject.SetActive(true);
+        animator.SetTrigger("respawnTrigger");
+
+        // Re-enable Patrol Rigidbody2D and link it to the script
+        Rigidbody2D newRB = gameObject.GetComponent<Rigidbody2D>();
+        if(newRB == null) {
+            newRB = gameObject.AddComponent<Rigidbody2D>();
+            newRB.freezeRotation = true;
+        }
+
+        EnemyPatrol _patrolRef = gameObject.GetComponent<EnemyPatrol>();
+        if(_patrolRef != null) _patrolRef.rb = newRB;
+
+        CapsuleCollider2D[] colliders = GetComponents<CapsuleCollider2D>();
+        foreach (CapsuleCollider2D collider in colliders) {
+            collider.enabled = true;
+        }
+
+        // Replenish health bar
+        enemyHealthBar?.gameObject.SetActive(true);
+        enemyHealthBar?.SetMaxHealth(maxHealth);
+        enemyHealthBar?.SetHealth(currentHealth);
+        
+        // Check if this enemy has a SanctuaryEnemyAttack script
+        SanctuaryEnemyAttack sanctuaryAtk = GetComponent<SanctuaryEnemyAttack>();
+        if (sanctuaryAtk != null) {
+            sanctuaryAtk.animator.SetBool("isDead", false);
+            sanctuaryAtk.isDead = false;
+            sanctuaryAtk.enabled = true;
         }
     }
 }

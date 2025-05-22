@@ -4,28 +4,20 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject prefab;
-    public float respawnDelay = 1f;
-    public bool canRespawn = false;
+    public GameObject patrolA;
+    public GameObject patrolB;
 
-    private GameObject currentEnemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Spawn();
-    }
+    public GameObject SpawnEnemy() {
+        // Create a new enemy at spawner position and get the reference to the patrol zone
+        GameObject enemy = Instantiate(prefab, transform.position, Quaternion.identity);
+        EnemyPatrol patrolRef = enemy.GetComponent<EnemyPatrol>();
 
-    void Spawn() {
-        if (canRespawn) {
-            currentEnemy = Instantiate(prefab, transform.position, Quaternion.identity);
-        }
-    }
+        patrolRef.pointA = patrolA;
+        patrolRef.pointB = patrolB;
+        patrolRef.currentPoint = patrolB.transform;
+        patrolRef.rb = enemy.GetComponent<Rigidbody2D>();
 
-    public void StartRespawn() {
-        if (canRespawn) StartCoroutine(RespawnAfterDelay());
-    }
-
-    private IEnumerator RespawnAfterDelay() {
-        yield return new WaitForSeconds(respawnDelay);
-        if (canRespawn) Spawn();
+        return enemy;
     }
 }

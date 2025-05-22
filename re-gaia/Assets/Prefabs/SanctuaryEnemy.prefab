@@ -397,11 +397,11 @@ GameObject:
   - component: {fileID: 2288969560483384899}
   - component: {fileID: 293439288970171992}
   - component: {fileID: 4117383675955546770}
-  - component: {fileID: 7015425777532686838}
   - component: {fileID: 8062732585706948069}
   - component: {fileID: 3857332405964071877}
   - component: {fileID: 1521130949864239969}
   - component: {fileID: 3023081503590998828}
+  - component: {fileID: 2648396107280021578}
   m_Layer: 6
   m_Name: SanctuaryEnemy
   m_TagString: Untagged
@@ -503,27 +503,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7015425777532686838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8240622439083766466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 394f5a2de4fc44741b8e7e0d2a501e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4117383675955546770}
-  spriteRenderer: {fileID: 293439288970171992}
-  enemyHealthBar: {fileID: 7946979773867132505}
-  patrol: {fileID: 8062732585706948069}
-  maxHealth: 150
-  pauseOnHitDuration: 0
-  lootTable:
-  - lootPrefab: {fileID: 5117521106252061196, guid: 83cfee5207691724ea8309095f43f53c, type: 3}
-    dropRate: 40
 --- !u!114 &8062732585706948069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,3 +609,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.7, y: 2.1875}
   m_Direction: 0
+--- !u!114 &2648396107280021578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240622439083766466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394f5a2de4fc44741b8e7e0d2a501e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4117383675955546770}
+  spriteRenderer: {fileID: 293439288970171992}
+  enemyHealthBar: {fileID: 7946979773867132505}
+  patrol: {fileID: 8062732585706948069}
+  maxHealth: 150
+  pauseOnHitDuration: 0
+  lootTable:
+  - lootPrefab: {fileID: 5117521106252061196, guid: 83cfee5207691724ea8309095f43f53c, type: 3}
+    dropRate: 40
+  questManager: {fileID: 0}
+  isAlive: 1

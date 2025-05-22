@@ -27,10 +27,7 @@ public class SanctuaryEnemyAttack : MonoBehaviour
         direction = transform.right * Mathf.Sign(transform.localScale.x);
         isDead = animator.GetBool("isDead");
         
-        if (isDead)
-        {
-            this.enabled = false;
-        }
+        this.enabled = isDead ? false : true;
 
         patrol.isPaused = PlayerInSight() || isAttacking;
 
