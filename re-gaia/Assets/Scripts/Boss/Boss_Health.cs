@@ -132,7 +132,15 @@ public class Boss_Health : MonoBehaviour
         {
             animator.SetTrigger("Die");
         }
-    
+
+        StartCoroutine(DisableScripts());
+    }
+
+    IEnumerator DisableScripts() {
+        yield return new WaitForSeconds(1.5f);
+        enemyHealthBar.gameObject.SetActive(false);
         GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+        bossMovement.gameObject.SetActive(false);
     }
 }

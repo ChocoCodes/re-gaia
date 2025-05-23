@@ -5,14 +5,20 @@ public class QuestManager : MonoBehaviour
     private int LOOT_REQUIRED = 3; // Adjust to 20 in real game
     public bool hasQuestStarted;
     public bool hasQuestCompleted;
-    public PlayerLootManager plm;
-    public EnemyRespawnManager erm;
+    private PlayerLootManager plm;
+    private EnemyRespawnManager erm;
+    private BarrierManager bm;
+
+    // Read-only properties
+    public int LOOT_COLLECTED => plm.lootCollected;
+    public int LOOT_NEEDED => LOOT_REQUIRED;
 
     private void Start() {
         hasQuestStarted = false;
         hasQuestCompleted = false;
         plm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLootManager>();
         erm = FindFirstObjectByType<EnemyRespawnManager>();
+        bm = FindFirstObjectByType<BarrierManager>();
     }
 
     void Update() {
@@ -37,6 +43,7 @@ public class QuestManager : MonoBehaviour
         // Debug.Log($"Quest Completed {hasQuestCompleted}");
         // Disable Enemy Respawn
         // Destroy Barrier in Scene
+        bm.DestroyAllTiles();
         this.enabled = false;
     }
 

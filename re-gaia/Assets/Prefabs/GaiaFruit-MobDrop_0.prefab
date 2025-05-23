@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4465882895075022152}
   - component: {fileID: -5669889138229785942}
   - component: {fileID: 5593279688831229859}
+  - component: {fileID: 1076506888536608473}
   m_Layer: 0
   m_Name: GaiaFruit-MobDrop_0
   m_TagString: Untagged
@@ -160,3 +161,15 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.15, y: -0.06}
   m_Radius: 0.66
+--- !u!114 &1076506888536608473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117521106252061196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dbf019b6fafb4f45b639aa7d428eae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
