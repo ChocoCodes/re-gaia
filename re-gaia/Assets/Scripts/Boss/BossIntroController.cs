@@ -3,50 +3,24 @@ using System.Collections;
 
 public class BossIntroController : MonoBehaviour
 {
+    [Header("Intro Settings")]
     public float triggerDistance = 5f; // Distance at which intro starts
+    public float introAnimationDuration = 3f; // Fallback duration if animation events fail
+    
+    [Header("References")]
     public Animator animator;
     public HealthBar healthBar;
     public Transform player;
     public GameObject bossHealthHUD; // Reference to the Canvas GameObject
-
+    
+    [Header("Debug")]
     public bool hasIntroPlayed = false;
     private bool isIntroPlaying = false;
-
+    
     void Start()
     {
-        // Find Canvas if not assigned
-        if (bossHealthHUD == null)
-        {
-            // Look for the Canvas in children
-            bossHealthHUD = transform.Find("Canvas")?.gameObject;
-            
-            if (bossHealthHUD == null)
-                Debug.LogError("Canvas GameObject could not be found as a child!");
-        }
-
-        // Make sure all references are assigned
-        if (animator == null)
-        {
-            animator = GetComponent<Animator>();
-            Debug.LogWarning("Animator was not assigned - attempting to get from this GameObject");
-        }
+        InitializeReferences();
         
-        if (player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player")?.transform;
-            Debug.LogWarning("Player was not assigned - attempting to find Player");
-        }
-
-        if (healthBar == null)
-        {
-            // Try to find health bar in the Canvas
-            if (bossHealthHUD != null)
-                healthBar = bossHealthHUD.GetComponentInChildren<HealthBar>();
-                
-            if (healthBar == null)
-                Debug.LogError("HealthBar reference is missing!");
-        }
-
         // Hide the HUD at start
         if (bossHealthHUD != null)
         {
@@ -54,16 +28,65 @@ public class BossIntroController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Canvas/HUD reference is missing!");
+            Debug.LogError("Canvas/HUD reference is missing and could not be found automatically!");
         }
     }
+    
+    private void InitializeReferences()
+    {
+        // Find Canvas if not assigned
+        if (bossHealthHUD == null)
+        {
+            // Look for the Canvas in children
+            bossHealthHUD = transform.Find("Canvas")?.gameObject;
+            if (bossHealthHUD == null)
+            {
+                // Try to find Canvas in parent or siblings
+                Canvas canvas = GetComponentInChildren<Canvas>();
+                if (canvas != null)
+                    bossHealthHUD = canvas.gameObject;
+            }
+            
+            if (bossHealthHUD == null)
+                Debug.LogError("Canvas GameObject could not be found as a child or component!");
+        }
 
+        // Get Animator if not assigned
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+            if (animator == null)
+                Debug.LogError("Animator component not found on this GameObject!");
+        }
+
+        // Find Player if not assigned
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.transform;
+            }
+            else
+            {
+                Debug.LogError("Player GameObject not found! Make sure it's tagged as 'Player'");
+            }
+        }
+
+        // Find HealthBar if not assigned
+        if (healthBar == null && bossHealthHUD != null)
+        {
+            healthBar = bossHealthHUD.GetComponentInChildren<HealthBar>();
+            if (healthBar == null)
+                Debug.LogError("HealthBar component not found in Canvas children!");
+        }
+    }
+    
     void Update()
     {
         if (!hasIntroPlayed && !isIntroPlaying && player != null)
         {
             float distance = Vector2.Distance(transform.position, player.position);
-            Debug.Log($"Distance to player: {distance}, Trigger distance: {triggerDistance}");
             
             if (distance <= triggerDistance)
             {
@@ -71,7 +94,7 @@ public class BossIntroController : MonoBehaviour
             }
         }
     }
-
+    
     void StartIntroSequence()
     {
         Debug.Log("Starting boss intro sequence");
@@ -80,9 +103,7 @@ public class BossIntroController : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("PlayIntro");
-            
-            // Alternative approach using coroutine as a backup
-            // in case animation events aren't working
+            // Start backup coroutine in case animation events don't work
             StartCoroutine(WaitForIntroAnimation());
         }
         else
@@ -91,13 +112,12 @@ public class BossIntroController : MonoBehaviour
             OnIntroAnimationFinished(); // Fallback to ensure game doesn't get stuck
         }
     }
-
+    
     // Coroutine as a backup method to end the intro if animation events fail
     private IEnumerator WaitForIntroAnimation()
     {
         // Wait for animation to complete
-        // You may need to adjust this time to match your animation length
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(introAnimationDuration);
         
         // If the intro is still playing after waiting, force it to finish
         if (isIntroPlaying)
@@ -106,14 +126,18 @@ public class BossIntroController : MonoBehaviour
             OnIntroAnimationFinished();
         }
     }
-
+    
     // This method should be called from the animation event
     public void OnIntroAnimationFinished()
     {
+        // Prevent multiple calls
+        if (!isIntroPlaying)
+            return;
+            
         Debug.Log("Boss intro animation finished");
         hasIntroPlayed = true;
         isIntroPlaying = false;
-
+        
         // Show health bar HUD after intro
         if (bossHealthHUD != null)
         {
@@ -123,9 +147,29 @@ public class BossIntroController : MonoBehaviour
         {
             Debug.LogWarning("Cannot show health HUD - reference is null");
         }
-
+        
         // Allow the Animator to transition to next state
         if (animator != null)
             animator.SetTrigger("IntroFinished");
+    }
+    
+    // Public method to manually trigger intro (useful for testing)
+    [ContextMenu("Trigger Intro")]
+    public void TriggerIntroManually()
+    {
+        if (!hasIntroPlayed && !isIntroPlaying)
+        {
+            StartIntroSequence();
+        }
+    }
+    
+    // Reset intro state (useful for testing)
+    [ContextMenu("Reset Intro")]
+    public void ResetIntro()
+    {
+        hasIntroPlayed = false;
+        isIntroPlaying = false;
+        if (bossHealthHUD != null)
+            bossHealthHUD.SetActive(false);
     }
 }
