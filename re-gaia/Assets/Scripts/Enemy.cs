@@ -65,6 +65,7 @@ public class Enemy : MonoBehaviour
         StartCoroutine(HideAfterAnim());
         // disable patrol script
         //GetComponent<EnemyPatrol>().enabled = false;
+        patrol.isPaused = false;
         patrol.enabled = false;
 
 
@@ -147,7 +148,11 @@ public class Enemy : MonoBehaviour
         }
 
         EnemyPatrol _patrolRef = gameObject.GetComponent<EnemyPatrol>();
-        if(_patrolRef != null) _patrolRef.rb = newRB;
+        if(_patrolRef != null) {
+            _patrolRef.rb = newRB;
+            //unpause enemy if it dies while attacking
+            _patrolRef.isPaused = false;
+        }
 
         CapsuleCollider2D[] colliders = GetComponents<CapsuleCollider2D>();
         foreach (CapsuleCollider2D collider in colliders) {
@@ -164,6 +169,7 @@ public class Enemy : MonoBehaviour
         if (sanctuaryAtk != null) {
             sanctuaryAtk.animator.SetBool("isDead", false);
             sanctuaryAtk.isDead = false;
+            sanctuaryAtk.isAttacking = false;
             sanctuaryAtk.enabled = true;
         }
     }

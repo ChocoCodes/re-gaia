@@ -26,7 +26,7 @@ public class QuestManager : MonoBehaviour
 
     void StartQuest() {
         hasQuestStarted = true;
-        // Debug.Log($"Quest Started {hasQuestStarted}");
+        Debug.Log($"Quest Started {hasQuestStarted}");
         // Enable Enemy Respawn
         erm?.RespawnEnemiesWhenQuestStart();
         // Show Quest UI and Counter

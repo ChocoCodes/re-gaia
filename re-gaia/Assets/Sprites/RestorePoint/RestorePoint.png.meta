@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RestorePoint_0: 6164807962804939879
+      RestorePoint_1: 4129065826553483846
+      RestorePoint_2: -3644505287781505035
+      RestorePoint_3: -6674522219667134967
+      RestorePoint_4: 7474934596552010536
+      RestorePoint_5: 1576310429004335358
+      RestorePoint_6: -2541608488093331485
+      RestorePoint_7: -1853830395035966347
+      RestorePoint_8: 2182936191642488484
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
