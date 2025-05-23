@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public PlayerMovement movement;
     public Rigidbody2D rb;
+    bool isTakingDamage = false;
 
     [Header("Health")]
     public int maxHealth = 100;
@@ -27,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage, float knockbackForce, float knockbackDuration, Vector2 damageSource)
     {
+        if (isTakingDamage) return;
+
         currentHealth -= damage;
         playerHealthBar.SetHealth(currentHealth);
 
@@ -38,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
+        isTakingDamage = true;
         animator.SetTrigger("takeDamage");
         StartCoroutine(ApplyKnockback(knockbackForce, knockbackDuration, damageSource));
     }
@@ -74,31 +78,26 @@ public class PlayerHealth : MonoBehaviour
         return currentHealth;
     }
 
-    private IEnumerator ApplyKnockback(float knockbackForce, float knockbackDuration, Vector2 damageSource)
-    {
-     //Debug.Log($"Applying knockback: Force={knockbackForce}, Duration={knockbackDuration}");
-        if (currentHealth <= 0) yield break;
-        
-        movement.isKnockedback = true;
-        movement.SetCanMove(false);
+private IEnumerator ApplyKnockback(float knockbackForce, float knockbackDuration, Vector2 damageSource)
+{
+    if (currentHealth <= 0) yield break;
 
-        /*float direction = transform.localScale.x < 0 ?
-            Mathf.Sign(transform.localScale.x) :
-            -Mathf.Sign(transform.localScale.x);*/
+    movement.isKnockedback = true;
+    movement.SetCanMove(false);
 
-        float direction = Mathf.Sign(transform.position.x - damageSource.x);
+    float direction = Mathf.Sign(transform.position.x - damageSource.x);
+    Vector2 knockbackVector = new Vector2(direction * knockbackForce, 0);
 
-        Vector2 knockbackVector = new Vector2(direction * knockbackForce, 0);
+    rb.linearVelocity = Vector2.zero;
+    rb.AddForce(knockbackVector, ForceMode2D.Impulse);
 
-        rb.linearVelocity = Vector2.zero;
-        rb.AddForce(knockbackVector, ForceMode2D.Impulse);
+    yield return new WaitForSeconds(knockbackDuration);
 
-        yield return new WaitForSeconds(knockbackDuration);
-
-        rb.linearVelocity = Vector2.zero;
-        movement.SetCanMove(true);
-        movement.isKnockedback = false;
-    }
+    rb.linearVelocity = Vector2.zero;
+    movement.SetCanMove(true);
+    movement.isKnockedback = false;
+    isTakingDamage = false; // <- reset flag
+}
 
     private IEnumerator FlashWhite()
     {

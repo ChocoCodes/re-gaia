@@ -45,8 +45,7 @@ public class PlayerMovement : MonoBehaviour
         if (isKnockedback)
         {
             Gravity();
-            animator.SetFloat("yVelocity", rb.linearVelocity.y);
-            animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
+            
             return;
         }
 
@@ -81,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
         Flip();
 
         animator.SetFloat("yVelocity", rb.linearVelocity.y);
+
+        
         animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
     }
 
