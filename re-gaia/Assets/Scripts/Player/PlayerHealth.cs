@@ -26,6 +26,17 @@ public class PlayerHealth : MonoBehaviour
         playerHealthBar.SetMaxHealth(maxHealth);
     }
 
+    public void HealPlayer(int healAmount)
+    {
+        if (currentHealth + healAmount > maxHealth)
+        {
+            healAmount = maxHealth - currentHealth;
+        }
+
+        currentHealth += healAmount;
+        playerHealthBar.SetHealth(currentHealth);
+    }
+
     public void TakeDamage(int damage, float knockbackForce, float knockbackDuration, Vector2 damageSource)
     {
         if (isTakingDamage) return;
