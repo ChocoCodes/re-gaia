@@ -8,10 +8,19 @@ public class QuestManager : MonoBehaviour
     private PlayerLootManager plm;
     private EnemyRespawnManager erm;
     private BarrierManager bm;
-
+    private bool isInRange = false;
+    public bool HasKey { get; private set; } = false;
+    public bool HasPlacedKey { get; private set; } = false;
     // Read-only properties
     public int LOOT_COLLECTED => plm.lootCollected;
     public int LOOT_NEEDED => LOOT_REQUIRED;
+
+    public void SetHasKey(bool value) {
+        HasKey = value;
+    }
+    public void SetHasPlacedKey(bool value) {
+        HasPlacedKey = value;
+    }
 
     private void Start() {
         hasQuestStarted = false;
@@ -22,11 +31,26 @@ public class QuestManager : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.E) && !hasQuestStarted && !hasQuestCompleted) {
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && !hasQuestStarted && !hasQuestCompleted) {
             StartQuest();
         }
         if (hasQuestStarted && !hasQuestCompleted && checkPlayerLootCount()) {
             EndQuest();
+        }
+        if (hasQuestCompleted && HasPlacedKey) {
+            bm.DestroyBossRoomBarriers();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Player")) {
+            isInRange = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag("Player")) {
+            isInRange = false;
         }
     }
 
@@ -43,7 +67,7 @@ public class QuestManager : MonoBehaviour
         // Debug.Log($"Quest Completed {hasQuestCompleted}");
         // Disable Enemy Respawn
         // Destroy Barrier in Scene
-        bm.DestroyAllTiles();
+        bm.DestroyKeyBarriers();
         this.enabled = false;
     }
 

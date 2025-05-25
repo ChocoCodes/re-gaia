@@ -2,24 +2,28 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class BarrierManager : MonoBehaviour {
-    private Tilemap barriers;
-
-    void Awake() {
-        barriers = GetComponent<Tilemap>();
-    }
+    [SerializeField] private Tilemap KeyBarriers;
+    [SerializeField] private Tilemap BossRoomBarriers;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) // Press 'R' to clear barrier
         {
-            DestroyAllTiles();
+            DestroyAllTiles(KeyBarriers);
+        }
+        if (Input.GetKeyDown(KeyCode.B)) // Press 'B' to clear boss room barrier
+        {
+            DestroyAllTiles(BossRoomBarriers);
         }
     }
 
-    public void DestroyAllTiles() {
-        if (barriers != null) {
-            barriers.ClearAllTiles();
-            Debug.Log("All tiles destroyed.");
+    public void DestroyAllTiles(Tilemap BarrierRef) {
+        if (BarrierRef != null) {
+            BarrierRef.ClearAllTiles();
+            Debug.Log($"{BarrierRef} tiles destroyed.");
         }
     }
+
+    public void DestroyKeyBarriers() => DestroyAllTiles(KeyBarriers);
+    public void DestroyBossRoomBarriers() => DestroyAllTiles(BossRoomBarriers);
 }
