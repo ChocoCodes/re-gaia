@@ -5,7 +5,7 @@ public class KeyPickup : MonoBehaviour {
         if(other.CompareTag("Player")) {
             QuestManager qm = FindFirstObjectByType<QuestManager>();
             if(qm) {
-                // qm.SetHasKey(true);
+                qm.SetHasKey(true);
                 Debug.Log("Key picked up");
             }
             Destroy(gameObject);

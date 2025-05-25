@@ -6,6 +6,7 @@ public class KeyInteraction : MonoBehaviour
     [SerializeField] private QuestManager qm;
     private SpriteRenderer sr;
     private bool isInRange = false;
+    public GameObject prompt;
 
     void Awake() {
         sr = GetComponent<SpriteRenderer>();
@@ -14,7 +15,7 @@ public class KeyInteraction : MonoBehaviour
 
     void Update() {
         // bool questRequirements = qm && qm.hasQuestCompleted && qm.HasKey;
-        if (isInRange) {
+        if (isInRange && qm.HasKey) {
             if (Input.GetKeyDown(KeyCode.E)) PlaceKey();
         }
     }
@@ -22,12 +23,14 @@ public class KeyInteraction : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             isInRange = true;
+            if (!qm.HasPlacedKey) prompt.SetActive(true);
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             isInRange = false;
+            prompt.SetActive(false);
         }
     }
 

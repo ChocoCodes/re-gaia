@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class QuestManager : MonoBehaviour
 {
@@ -14,6 +16,13 @@ public class QuestManager : MonoBehaviour
     // Read-only properties
     public int LOOT_COLLECTED => plm.lootCollected;
     public int LOOT_NEEDED => LOOT_REQUIRED;
+
+    public GameObject countUI;
+    public GameObject keyUI;
+    public GameObject prompt;
+    public TMP_Text countText;
+    public Image blankKey;
+    public Sprite filledKey;
 
     public void SetHasKey(bool value) {
         HasKey = value;
@@ -32,6 +41,14 @@ public class QuestManager : MonoBehaviour
 
     void Update() {
         //Debug.Log(isInRange);
+        countText.text = plm.lootCollected.ToString();
+
+        if (HasKey)
+        {
+            countUI.SetActive(false);
+            blankKey.sprite = filledKey;
+        }
+
         if (isInRange && Input.GetKeyDown(KeyCode.E) && !hasQuestStarted && !hasQuestCompleted) {
             StartQuest();
         }
@@ -40,6 +57,7 @@ public class QuestManager : MonoBehaviour
         }
         if (hasQuestCompleted && HasPlacedKey) {
             bm.DestroyBossRoomBarriers();
+            keyUI.SetActive(false);
             this.enabled = false;
         }
     }
@@ -47,12 +65,14 @@ public class QuestManager : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             isInRange = true;
+            if (!hasQuestStarted) prompt.SetActive(true);
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             isInRange = false;
+            prompt.SetActive(false);
         }
     }
 
@@ -62,10 +82,13 @@ public class QuestManager : MonoBehaviour
         // Enable Enemy Respawn
         erm?.RespawnEnemiesWhenQuestStart();
         // Show Quest UI and Counter
+        countUI.SetActive(true);
+        keyUI.SetActive(true);
     }
 
     void EndQuest() {
         hasQuestCompleted = true;
+        countText.color = new Color(0.6f, 1f, 0.6f);
         // Debug.Log($"Quest Completed {hasQuestCompleted}");
         // Disable Enemy Respawn
         // Destroy Barrier in Scene
