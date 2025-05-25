@@ -7414,7 +7414,7 @@ RectTransform:
   m_Father: {fileID: 1150285210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -49655,7 +49655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &761096921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50007,7 +50007,7 @@ RectTransform:
   m_Father: {fileID: 625867981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 5.6}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -52321,7 +52321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1120115624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54620,11 +54620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2288969560483384899, guid: f0cdaacd0a6e2264889d5cc98569e171, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7437935
+      value: -1.76
       objectReference: {fileID: 0}
     - target: {fileID: 2288969560483384899, guid: f0cdaacd0a6e2264889d5cc98569e171, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.702816
+      value: 4.56
       objectReference: {fileID: 0}
     - target: {fileID: 2288969560483384899, guid: f0cdaacd0a6e2264889d5cc98569e171, type: 3}
       propertyPath: m_LocalPosition.z
@@ -111413,7 +111413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyPlacedSprite: {fileID: -519263788, guid: 9900c5b38f5c2b349b232e3d07b4cc9e, type: 3}
-  qm: {fileID: 761096921}
+  qm: {fileID: 1988498813}
 --- !u!61 &1889585421
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112381,7 +112381,7 @@ GameObject:
   - component: {fileID: 1988498814}
   m_Layer: 0
   m_Name: QuestTrigger
-  m_TagString: Untagged
+  m_TagString: QuestManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112647,7 +112647,7 @@ Transform:
   m_GameObject: {fileID: 1999328260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.96, y: 9.4, z: -10}
+  m_LocalPosition: {x: 6.1769724, y: 21.85986, z: -10}
   m_LocalScale: {x: 1.0035496, y: 0.99116, z: 0.99116}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -114374,11 +114374,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674149439438939554, guid: 6a28f849ae0b5334383513b8e78c6bd6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.96
+      value: 5.43
       objectReference: {fileID: 0}
     - target: {fileID: 2674149439438939554, guid: 6a28f849ae0b5334383513b8e78c6bd6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.4
+      value: 21.86
       objectReference: {fileID: 0}
     - target: {fileID: 2674149439438939554, guid: 6a28f849ae0b5334383513b8e78c6bd6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -114415,6 +114415,10 @@ PrefabInstance:
     - target: {fileID: 2791380922349383912, guid: 6a28f849ae0b5334383513b8e78c6bd6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250358929874499238, guid: 6a28f849ae0b5334383513b8e78c6bd6, type: 3}
+      propertyPath: attackDamage
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5362246902279891298, guid: 6a28f849ae0b5334383513b8e78c6bd6, type: 3}
       propertyPath: BoundingShape2D

@@ -31,6 +31,7 @@ public class QuestManager : MonoBehaviour
     }
 
     void Update() {
+        //Debug.Log(isInRange);
         if (isInRange && Input.GetKeyDown(KeyCode.E) && !hasQuestStarted && !hasQuestCompleted) {
             StartQuest();
         }
@@ -39,6 +40,7 @@ public class QuestManager : MonoBehaviour
         }
         if (hasQuestCompleted && HasPlacedKey) {
             bm.DestroyBossRoomBarriers();
+            this.enabled = false;
         }
     }
 
@@ -68,7 +70,7 @@ public class QuestManager : MonoBehaviour
         // Disable Enemy Respawn
         // Destroy Barrier in Scene
         bm.DestroyKeyBarriers();
-        this.enabled = false;
+        //this.enabled = false;
     }
 
     bool checkPlayerLootCount() {

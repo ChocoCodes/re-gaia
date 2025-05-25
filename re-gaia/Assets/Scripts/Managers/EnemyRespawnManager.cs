@@ -11,6 +11,7 @@ public class EnemyRespawnManager : MonoBehaviour
         public Quaternion startRot = Quaternion.identity;
     }
 
+    private QuestManager qm;
     public List<EnemyMetadata> enemies = new List<EnemyMetadata>();
 
     private bool isRespawning = false;
@@ -26,9 +27,12 @@ public class EnemyRespawnManager : MonoBehaviour
             data.startRot = data.enemy.transform.rotation;
             data.enemy.SetManager(this);
         }
+
+        qm = FindFirstObjectByType<QuestManager>();
     }
 
     public void OnEnemyDeath() {
+        if (qm.hasQuestCompleted) return;
         if (isRespawning) return;
 
         bool allDead = true;

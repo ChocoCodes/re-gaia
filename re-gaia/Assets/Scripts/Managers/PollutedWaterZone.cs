@@ -16,7 +16,7 @@ public class PollutedWaterZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Player entered the zone");
+        //Debug.Log("Player entered the zone");
         if (!other.CompareTag("Player")) return;
 
         _health = other.GetComponent<PlayerHealth>();
@@ -33,7 +33,7 @@ public class PollutedWaterZone : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("Player is in the zone");
+        //Debug.Log("Player is in the zone");
         if (!_playerInZone || !other.CompareTag("Player")) return;
 
         if (_movement != null)
