@@ -32,5 +32,9 @@ public class Bullet : MonoBehaviour
             player.TakeDamage(damage, knockbackForce, knockbackDuration, transform.position);
             Destroy(gameObject);
         }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
