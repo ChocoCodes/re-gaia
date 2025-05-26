@@ -73,7 +73,7 @@ public class Boss_Skill : StateMachineBehaviour
             return;
         }
         
-        float horizontalDistance = Mathf.Abs(player.position.x - boss.transform.position.x);
+        float horizontalDistance = boss.GetDistanceToPlayer();
         
         // Check if player is in basic attack range and attack isn't on cooldown
         if (horizontalDistance <= boss.basicAttackRange)

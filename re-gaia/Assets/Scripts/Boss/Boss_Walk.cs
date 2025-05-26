@@ -23,7 +23,7 @@ public class Boss_Run : StateMachineBehaviour
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
-        float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
+        float horizontalDistance = boss.GetDistanceToPlayer();
 
         // Priority 1: Skill attack (if player is in skill range AND skill is not on cooldown)
         if (horizontalDistance >= boss.skillTriggerRange && !boss.IsSkillOnCooldown())

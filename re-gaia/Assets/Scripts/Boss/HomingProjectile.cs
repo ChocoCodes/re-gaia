@@ -46,9 +46,9 @@ public class HomingProjectile : MonoBehaviour
 
         Vector2 direction = (Vector2)target.position - rb.position;
         direction.Normalize();
-        float rotateAmount = Vector3.Cross(direction, boss.isFlipped ? -transform.right : transform.right).z;
+        float rotateAmount = Vector3.Cross(direction, boss.isFlipped ? transform.right : -transform.right).z;
         rb.angularVelocity = -rotateAmount * rotateSpeed;
-        rb.linearVelocity = (boss.isFlipped ? -transform.right : transform.right) * speed;
+        rb.linearVelocity = (boss.isFlipped ? 1 : -1) * transform.right * speed;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

@@ -16,7 +16,7 @@ public class Boss : MonoBehaviour
     private float skillLastAttackTime;
     public float skillTriggerRange = 15f; // Must be greater than basicAttackRange
     public int skillDamage = 25;
-    public float skillKnockbackForce = 20f;
+    public float skillKnockbackForce = 10f;
     public float skillKnockbackDuration = 0.5f;
     public bool skillWaitingForCooldown = false;
 
@@ -67,22 +67,23 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void LookAtPlayer()
-    {
-        Vector3 flipped = transform.localScale;
-        flipped.z *= -1f;
+public void LookAtPlayer()
+{
+    if (player == null) return;
 
-        if (transform.position.x > player.position.x && isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
-        }
-        else if (transform.position.x < player.position.x && !isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = true;
-        }
+    Vector3 scale = transform.localScale;
+
+    if (transform.position.x > player.position.x && isFlipped)
+    {
+        scale.x *= -1;
+        transform.localScale = scale;
+        isFlipped = false;
     }
+    else if (transform.position.x < player.position.x && !isFlipped)
+    {
+        scale.x *= -1;
+        transform.localScale = scale;
+        isFlipped = true;
+    }
+}
 }

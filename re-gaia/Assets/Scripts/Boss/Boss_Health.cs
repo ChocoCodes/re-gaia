@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Boss_Health : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 500;
     public float pauseOnHitDuration = 2f;
     int currentHealth;
     public HealthBar enemyHealthBar;
