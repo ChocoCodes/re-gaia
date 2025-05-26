@@ -10,6 +10,7 @@ public class QuestManager : MonoBehaviour
     private PlayerLootManager plm;
     private EnemyRespawnManager erm;
     private BarrierManager bm;
+    private PlayerSlash playerSlash;
     private bool isInRange = false;
     public bool HasKey { get; private set; } = false;
     public bool HasPlacedKey { get; private set; } = false;
@@ -35,6 +36,7 @@ public class QuestManager : MonoBehaviour
         hasQuestStarted = false;
         hasQuestCompleted = false;
         plm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLootManager>();
+        playerSlash = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSlash>();
         erm = FindFirstObjectByType<EnemyRespawnManager>();
         bm = FindFirstObjectByType<BarrierManager>();
     }
@@ -94,6 +96,7 @@ public class QuestManager : MonoBehaviour
         // Destroy Barrier in Scene
         bm.DestroyKeyBarriers();
         //this.enabled = false;
+        playerSlash.isUnlocked = true;
     }
 
     bool checkPlayerLootCount() {
