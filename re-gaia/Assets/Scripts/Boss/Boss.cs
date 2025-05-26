@@ -24,6 +24,15 @@ public class Boss : MonoBehaviour
     public Transform player;
     public bool isFlipped = false;
 
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+
+    void Start()
+    {
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+    }
+
     public bool IsAttackOnCooldown()
     {
         return Time.time < basicLastAttackTime + basicAttackCooldown;
@@ -67,23 +76,103 @@ public class Boss : MonoBehaviour
         }
     }
 
-public void LookAtPlayer()
-{
-    if (player == null) return;
-
-    Vector3 scale = transform.localScale;
-
-    if (transform.position.x > player.position.x && isFlipped)
+    public void LookAtPlayer()
     {
-        scale.x *= -1;
-        transform.localScale = scale;
-        isFlipped = false;
+        if (player == null) return;
+
+        Vector3 scale = transform.localScale;
+
+        if (transform.position.x > player.position.x && isFlipped)
+        {
+            scale.x *= -1;
+            transform.localScale = scale;
+            isFlipped = false;
+        }
+        else if (transform.position.x < player.position.x && !isFlipped)
+        {
+            scale.x *= -1;
+            transform.localScale = scale;
+            isFlipped = true;
+        }
     }
-    else if (transform.position.x < player.position.x && !isFlipped)
+
+    public void ResetBoss()
     {
-        scale.x *= -1;
-        transform.localScale = scale;
-        isFlipped = true;
+        Debug.Log("[Boss] Starting boss reset...");
+        
+        // Reset position and rotation
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+        
+        Debug.Log($"[Boss] Position reset to: {initialPosition}, Rotation reset to: {initialRotation}");
+        
+        // Reset GameObject state
+        gameObject.SetActive(true);
+        
+        // Reset physics
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.simulated = true;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
+        
+        GetComponent<Collider2D>().enabled = true;
+
+        // Reset cooldown timers
+        basicLastAttackTime = 0f;
+        skillLastAttackTime = 0f;
+
+        // Reset animation triggers
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.speed = 1f; // Reset animation speed in case it was paused
+            animator.ResetTrigger("Attack");
+            animator.ResetTrigger("Die");
+            animator.ResetTrigger("Idle");
+            animator.ResetTrigger("Run");
+            animator.ResetTrigger("IntroFinished");
+            animator.ResetTrigger("PlayIntro");
+            animator.ResetTrigger("Skill");
+            
+            // Reset to intro idle state
+            animator.Play("Boss_IntroIdle", 0, 0f);
+        }
+
+        // Reset boss health
+        Boss_Health bossHealth = GetComponent<Boss_Health>();
+        if (bossHealth != null)
+        {
+            bossHealth.enabled = true;
+            bossHealth.enemyHealthBar.gameObject.SetActive(true);
+            
+            // Reset health value using reflection
+            typeof(Boss_Health).GetField("currentHealth", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                ?.SetValue(bossHealth, bossHealth.maxHealth);
+
+            bossHealth.enemyHealthBar.SetHealth(bossHealth.maxHealth);
+            Debug.Log("[Boss] Health reset to maximum");
+        }
+
+        // Reset intro controller
+        BossIntroController introController = GetComponent<BossIntroController>();
+        if (introController != null)
+        {
+            introController.ResetIntro();
+            Debug.Log("[Boss] Intro controller reset");
+        }
+        LookAtPlayer();
+
+        // Explode all existing homing projectiles
+        HomingProjectile[] projectiles = FindObjectsByType<HomingProjectile>(FindObjectsSortMode.None);
+        foreach (HomingProjectile projectile in projectiles)
+        {
+            projectile.SendMessage("StartExplosion", SendMessageOptions.DontRequireReceiver);
+        }
+
+        Debug.Log("[Boss] Boss reset completed");
     }
-}
 }
