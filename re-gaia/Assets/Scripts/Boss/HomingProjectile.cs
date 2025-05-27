@@ -53,6 +53,9 @@ public class HomingProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Tracker"))
+            return;
+
         // Prevent multiple explosions
         if (isExploding)
             return;

@@ -2,8 +2,16 @@ using UnityEngine;
 
 public class BossResetTrigger : MonoBehaviour
 {
+    private bool hasTriggered = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!hasTriggered)
+        {
+            hasTriggered = true;
+            return;
+        }
+
         if (other.CompareTag("Player"))
         {
             GameObject bossObj = GameObject.FindGameObjectWithTag("Boss");

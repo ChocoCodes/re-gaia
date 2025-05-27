@@ -149,7 +149,6 @@ public class Boss : MonoBehaviour
             bossHealth.enabled = true;
             bossHealth.enemyHealthBar.gameObject.SetActive(true);
             
-            // Reset health value using reflection
             typeof(Boss_Health).GetField("currentHealth", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 ?.SetValue(bossHealth, bossHealth.maxHealth);
 

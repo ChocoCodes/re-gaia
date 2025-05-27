@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public PlayerMovement movement;
     public Rigidbody2D rb;
+    bool isDead = false;
     bool isTakingDamage = false;
 
     [Header("Health")]
@@ -20,8 +21,14 @@ public class PlayerHealth : MonoBehaviour
         InitHealth();
     }
 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     public void InitHealth()
     {
+        isDead = false;
         currentHealth = maxHealth;
         playerHealthBar.SetMaxHealth(maxHealth);
     }
@@ -75,6 +82,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         animator.SetTrigger("isDead");
+        isDead = true;
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
         GetComponent<Collider2D>().enabled = false;

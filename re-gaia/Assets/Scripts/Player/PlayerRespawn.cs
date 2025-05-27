@@ -38,27 +38,34 @@ public class PlayerRespawn : MonoBehaviour
         transform.position = respawnPosition;
         Debug.Log($"[PlayerRespawn] Player position set to: {transform.position}");
         
-        // Always attempt to reset boss when player dies
-        Debug.Log("[PlayerRespawn] Attempting to reset boss...");
-        GameObject bossObj = GameObject.FindGameObjectWithTag("Boss");
-        if (bossObj != null)
+        // Reset boss only if player was in the boss room
+        if (BossRoomTracker.PlayerInBossRoom)
         {
-            Debug.Log($"[PlayerRespawn] Boss object found: {bossObj.name}");
-            Boss boss = bossObj.GetComponent<Boss>();
-            if (boss != null)
+            Debug.Log("[PlayerRespawn] Player was in boss room. Attempting to reset boss...");
+            GameObject bossObj = GameObject.FindGameObjectWithTag("Boss");
+            if (bossObj != null)
             {
-                Debug.Log("[PlayerRespawn] Boss component found. Calling ResetBoss()");
-                boss.ResetBoss();
-                Debug.Log("[PlayerRespawn] Boss reset completed");
+                Debug.Log($"[PlayerRespawn] Boss object found: {bossObj.name}");
+                Boss boss = bossObj.GetComponent<Boss>();
+                if (boss != null)
+                {
+                    Debug.Log("[PlayerRespawn] Boss component found. Calling ResetBoss()");
+                    boss.ResetBoss();
+                    Debug.Log("[PlayerRespawn] Boss reset completed");
+                }
+                else
+                {
+                    Debug.LogWarning("[PlayerRespawn] Boss component not found on boss object!");
+                }
             }
             else
             {
-                Debug.LogWarning("[PlayerRespawn] Boss component not found on boss object!");
+                Debug.Log("[PlayerRespawn] No boss object found with tag 'Boss' - skipping boss reset");
             }
         }
         else
         {
-            Debug.Log("[PlayerRespawn] No boss object found with tag 'Boss' - skipping boss reset");
+            Debug.Log("[PlayerRespawn] Player was not in boss room. Boss reset skipped.");
         }
         
         // Reactivate player components
