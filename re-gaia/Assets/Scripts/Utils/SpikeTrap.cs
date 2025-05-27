@@ -58,8 +58,8 @@ public class SpikeTrap : MonoBehaviour
     IEnumerator ActivateSpike() {
         isTriggered = true;
         isActive = true;
+        SoundManager.PlaySound(SoundType.SPIKE_ENABLED, 0.5f);
         animator.SetBool("activated", true);
-
         yield return new WaitForSeconds(activeTime);
 
         isActive = false;

@@ -97,26 +97,26 @@ public class PlayerHealth : MonoBehaviour
         return currentHealth;
     }
 
-private IEnumerator ApplyKnockback(float knockbackForce, float knockbackDuration, Vector2 damageSource)
-{
-    if (currentHealth <= 0) yield break;
+    private IEnumerator ApplyKnockback(float knockbackForce, float knockbackDuration, Vector2 damageSource)
+    {
+        if (currentHealth <= 0) yield break;
 
-    movement.isKnockedback = true;
-    movement.SetCanMove(false);
+        movement.isKnockedback = true;
+        movement.SetCanMove(false);
 
-    float direction = Mathf.Sign(transform.position.x - damageSource.x);
-    Vector2 knockbackVector = new Vector2(direction * knockbackForce, 0);
+        float direction = Mathf.Sign(transform.position.x - damageSource.x);
+        Vector2 knockbackVector = new Vector2(direction * knockbackForce, 0);
 
-    rb.linearVelocity = Vector2.zero;
-    rb.AddForce(knockbackVector, ForceMode2D.Impulse);
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(knockbackVector, ForceMode2D.Impulse);
 
-    yield return new WaitForSeconds(knockbackDuration);
+        yield return new WaitForSeconds(knockbackDuration);
 
-    rb.linearVelocity = Vector2.zero;
-    movement.SetCanMove(true);
-    movement.isKnockedback = false;
-    isTakingDamage = false; // <- reset flag
-}
+        rb.linearVelocity = Vector2.zero;
+        movement.SetCanMove(true);
+        movement.isKnockedback = false;
+        isTakingDamage = false; // <- reset flag
+    }
 
     private IEnumerator FlashWhite()
     {

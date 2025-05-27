@@ -37,5 +37,6 @@ public class PlayerHeal : MonoBehaviour
         slider.value = 0f;
         skillImage.color = Color.gray;
         health.HealPlayer(healAmount);
+        SoundManager.PlaySound(SoundType.PLAYER_HEAL, 0.5f);
     }
 }

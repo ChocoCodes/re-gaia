@@ -19,6 +19,7 @@ public class BarrierManager : MonoBehaviour {
 
     public void DestroyAllTiles(Tilemap BarrierRef) {
         if (BarrierRef != null) {
+            SoundManager.PlaySound(SoundType.BARRIER_DESTROYED, 0.5f);
             BarrierRef.ClearAllTiles();
             Debug.Log($"{BarrierRef} tiles destroyed.");
         }

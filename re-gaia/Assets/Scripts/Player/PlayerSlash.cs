@@ -55,5 +55,6 @@ public class PlayerSlash : MonoBehaviour
 
         slider.value = 0f;
         skillImage.color = Color.gray;
+        SoundManager.PlaySound(SoundType.PLAYER_SLASH);
     }
 }

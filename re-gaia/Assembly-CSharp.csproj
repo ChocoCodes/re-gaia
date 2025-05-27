@@ -66,8 +66,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy\EnemyPatrol.cs" />
     <Compile Include="Assets\Scripts\Boss\Boss.cs" />
+    <Compile Include="Assets\PlayFootstep.cs" />
     <Compile Include="Assets\Scripts\Managers\BarrierManager.cs" />
     <Compile Include="Assets\Scripts\Boss\Boss_Skill.cs" />
+    <Compile Include="Assets\Scripts\Sound\PlaySoundEnter.cs" />
     <Compile Include="Assets\Scripts\Managers\PollutedWaterZone.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Bullet.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHeal.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Assets\Scripts\Boss\BossResetTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\SlashPrefab.cs" />
     <Compile Include="Assets\Scripts\Utils\MobDrop.cs" />
+    <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Boss\Boss_Health.cs" />
     <Compile Include="Assets\Scripts\Enemy\CliffEnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />

@@ -5,6 +5,7 @@ public class KeyPickup : MonoBehaviour {
         if(other.CompareTag("Player")) {
             QuestManager qm = FindFirstObjectByType<QuestManager>();
             if(qm) {
+                SoundManager.PlaySound(SoundType.ITEM_PICKUP, 0.5f);
                 qm.SetHasKey(true);
                 Debug.Log("Key picked up");
             }
