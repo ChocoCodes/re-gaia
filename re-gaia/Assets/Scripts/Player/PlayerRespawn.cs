@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerRespawn : MonoBehaviour
 {
@@ -75,6 +76,7 @@ public class PlayerRespawn : MonoBehaviour
         GetComponent<PlayerHealth>().InitHealth();
         GetComponent<PlayerMovement>().enabled = true;
         GetComponent<PlayerAttack>().enabled = true;
+        GetComponent<PlayerInput>().enabled = true;
         GetComponent<Collider2D>().enabled = true;
         GetComponent<Rigidbody2D>().simulated = true;
         

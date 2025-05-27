@@ -31,7 +31,6 @@ public class PlayerHeal : MonoBehaviour
     {
         if (slider.value < slider.maxValue) return;
         if (health.GetCurrentHealth() == health.maxHealth) return;
-        if (health.GetCurrentHealth() <= 0) return;
 
         animator.SetTrigger("heal");
         slider.value = 0f;

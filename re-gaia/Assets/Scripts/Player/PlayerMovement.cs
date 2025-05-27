@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator animator;
+    public PlayerAttack attack;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -113,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             animator.SetTrigger("jump");
+            attack.EndAttack();
         }/*
         else if (context.canceled)
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerMovement movement;
+    public PlayerAttack attack;
     public Rigidbody2D rb;
     bool isDead = false;
     bool isTakingDamage = false;
@@ -83,9 +85,11 @@ public class PlayerHealth : MonoBehaviour
     {
         animator.SetTrigger("isDead");
         isDead = true;
+        attack.EndAttack();
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<PlayerInput>().enabled = false;
         rb.simulated = false;
         this.enabled = false;
         
