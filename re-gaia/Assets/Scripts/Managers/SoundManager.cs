@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SoundType {
+public enum SoundType
+{
     PLAYER_SLASH,
     PLAYER_HEAL,
     PLAYER_HURT,
@@ -15,6 +16,8 @@ public enum SoundType {
     SPIKE_ENABLED,
     BARRIER_DESTROYED,
     ITEM_PICKUP,
+    BOSS_WALK,
+    BOSS_ATK,
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
