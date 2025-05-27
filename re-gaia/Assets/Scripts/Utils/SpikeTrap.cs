@@ -29,8 +29,7 @@ public class SpikeTrap : MonoBehaviour
             // Damage player if active and cooldown passed
             if (isActive && Time.time - lastDamageTime >= cd) {
                 Debug.Log("Player hit by Spike Trap (Enter)");
-                other.GetComponent<PlayerHealth>().TakeDamage(damage);
-                lastDamageTime = Time.time;
+                InvokeSpikeDamage(other);
             }
         }
     }
@@ -46,10 +45,14 @@ public class SpikeTrap : MonoBehaviour
             // Damage player if active and cooldown passed
             if (isActive && Time.time - lastDamageTime >= cd) {
                 Debug.Log("Player hit by Spike Trap (Stay)");
-                other.GetComponent<PlayerHealth>().TakeDamage(damage);
-                lastDamageTime = Time.time;
+                InvokeSpikeDamage(other);
             }
         }
+    }
+
+    void InvokeSpikeDamage(Collider2D other) {
+        other.GetComponent<PlayerHealth>().TakeDamage(damage);
+        lastDamageTime = Time.time;
     }
 
     IEnumerator ActivateSpike() {

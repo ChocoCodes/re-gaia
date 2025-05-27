@@ -6,6 +6,8 @@ public class QuestUIRenderer : MonoBehaviour {
     [SerializeField] private Animator animator;
     [SerializeField] private QuestManager qm;
 
+    private bool hasCompletedQuest = false;
+
     void Start() {
         spRenderer.sprite = progressSprites[0];
         animator.enabled = false;
@@ -16,11 +18,12 @@ public class QuestUIRenderer : MonoBehaviour {
             UpdateSprite();
             return;
         }
-        if(qm.hasQuestCompleted) {
+        if(qm.hasQuestCompleted && !hasCompletedQuest) {
             //spRenderer.enabled = false;
             animator.enabled = true;
+            Debug.Log("Quest Completed, triggering animation");
+            hasCompletedQuest = true;
             animator?.SetTrigger("QuestCompleted");
-            return;
         }
     }
 

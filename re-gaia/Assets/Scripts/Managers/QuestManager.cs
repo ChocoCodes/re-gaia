@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class QuestManager : MonoBehaviour
 {
-    private int LOOT_REQUIRED = 3; // Adjust to 20 in real game
+    private int LOOT_REQUIRED = 1; // Adjust to 20 in real game
     public bool hasQuestStarted;
     public bool hasQuestCompleted;
     private PlayerLootManager plm;
@@ -47,7 +47,6 @@ public class QuestManager : MonoBehaviour
 
         if (HasKey)
         {
-            countUI.SetActive(false);
             blankKey.sprite = filledKey;
         }
 
@@ -56,6 +55,7 @@ public class QuestManager : MonoBehaviour
         }
         if (hasQuestStarted && !hasQuestCompleted && checkPlayerLootCount()) {
             EndQuest();
+            countUI.SetActive(false);
         }
         if (hasQuestCompleted && HasPlacedKey) {
             bm.DestroyBossRoomBarriers();
