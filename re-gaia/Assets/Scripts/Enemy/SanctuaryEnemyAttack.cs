@@ -60,7 +60,7 @@ public class SanctuaryEnemyAttack : MonoBehaviour
     }
 
     public void PlayLaunchSFX() {
-        SoundManager.PlaySound(SoundType.ENEMEY_PROJ_LAUNCH, 0.7f);
+        SoundManager.PlaySound(SoundType.ENEMY_PROJ_LAUNCH, 0.7f);
     }
 
     public void PlayExplodeSFX() {

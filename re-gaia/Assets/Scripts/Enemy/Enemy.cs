@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         // Disable the healthbar only
         enemyHealthBar?.gameObject.SetActive(false);
         animator.SetBool("isDead", true);
-        SoundManager.PlaySound(SoundType.ENEMEY_DEATH, 0.9f);
+        SoundManager.PlaySound(SoundType.ENEMY_DEATH, 0.9f);
         // Hide the enemy after death animation
         StartCoroutine(HideAfterAnim());
         // disable patrol script

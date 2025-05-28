@@ -14,7 +14,7 @@ public class BossSfx : MonoBehaviour
 
     public void PlayDeathSFX()
     {
-        SoundManager.PlaySound(SoundType.BOSS_DEATH, 0.7f);
+        SoundManager.PlaySound(SoundType.BOSS_DEATH, 1f);
     }
 
     public void PlayGrowlSFX()

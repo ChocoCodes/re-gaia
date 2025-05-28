@@ -12,10 +12,14 @@ public class BossIntroController : MonoBehaviour
     public HealthBar healthBar;
     public Transform player;
     public GameObject bossHealthHUD; // Reference to the Canvas GameObject
+    public MonoBehaviour bossHealth; // Reference to BossHealth script
     
     [Header("Debug")]
     public bool hasIntroPlayed = false;
     private bool isIntroPlaying = false;
+    private Collider2D[] bossColliders;
+    private Rigidbody2D bossRigidbody;
+    private RigidbodyType2D originalKinematicState;
     
     void Start()
     {
@@ -80,6 +84,19 @@ public class BossIntroController : MonoBehaviour
             if (healthBar == null)
                 Debug.LogError("HealthBar component not found in Canvas children!");
         }
+
+        // Find BossHealth if not assigned
+        if (bossHealth == null)
+        {
+            bossHealth = GetComponent<Boss_Health>();
+            if (bossHealth == null)
+                Debug.LogWarning("BossHealth component not found on this GameObject.");
+        }
+
+        bossColliders = GetComponentsInChildren<Collider2D>();
+        bossRigidbody = GetComponent<Rigidbody2D>();
+        if (bossRigidbody != null)
+            originalKinematicState = bossRigidbody.bodyType;
     }
     
     void Update()
@@ -99,6 +116,23 @@ public class BossIntroController : MonoBehaviour
     {
         Debug.Log("Starting boss intro sequence");
         isIntroPlaying = true;
+
+        // Disable boss health script during intro
+        if (bossHealth != null)
+            bossHealth.enabled = false;
+        
+        // Disable colliders during intro
+        if (bossColliders != null)
+        {
+            foreach (var col in bossColliders)
+            {
+                col.enabled = false;
+            }
+        }
+
+        // Temporarily disable physics
+        if (bossRigidbody != null)
+            bossRigidbody.bodyType = RigidbodyType2D.Kinematic;
         
         if (animator != null)
         {
@@ -133,6 +167,22 @@ public class BossIntroController : MonoBehaviour
         // Prevent multiple calls
         if (!isIntroPlaying)
             return;
+
+        // Enable boss health script after intro
+        if (bossHealth != null)
+            bossHealth.enabled = true;
+
+        // Enable colliders after intro
+        if (bossColliders != null)
+        {
+            foreach (var col in bossColliders)
+            {
+                col.enabled = true;
+            }
+        }
+
+        if (bossRigidbody != null)
+            bossRigidbody.bodyType = originalKinematicState;
             
         Debug.Log("Boss intro animation finished");
         hasIntroPlayed = true;
@@ -171,5 +221,18 @@ public class BossIntroController : MonoBehaviour
         isIntroPlaying = false;
         if (bossHealthHUD != null)
             bossHealthHUD.SetActive(false);
+        if (bossHealth != null)
+            bossHealth.enabled = false;
+
+        if (bossColliders != null)
+        {
+            foreach (var col in bossColliders)
+            {
+                col.enabled = false;
+            }
+        }
+
+        if (bossRigidbody != null)
+            bossRigidbody.bodyType = RigidbodyType2D.Kinematic;
     }
 }

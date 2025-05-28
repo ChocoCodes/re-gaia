@@ -24,6 +24,6 @@ public class ProjectileSfx : MonoBehaviour
         if (projectileSource.isPlaying)
             projectileSource.Stop();
 
-        SoundManager.PlaySound(SoundType.BOSS_PROJECTILE_EXPOLOSION, 0.3f);
+        SoundManager.PlaySound(SoundType.BOSS_PROJECTILE_EXPLOSION, 0.3f);
     }
 }
