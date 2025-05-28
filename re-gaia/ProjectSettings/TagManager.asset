@@ -8,6 +8,7 @@ TagManager:
   - QuestManager
   - Respawnable
   - Boss
+  - RespawnBossRoom
   layers:
   - Default
   - TransparentFX

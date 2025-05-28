@@ -8,11 +8,25 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private QuestManager questManager;
     [SerializeField] private GameObject bossFightRespawn;
     
-    private void Start() 
+    private void Awake() 
     {
         startPos = transform.position;
+        bossFightRespawn = GameObject.FindGameObjectWithTag("RespawnBossRoom");
+        Debug.Log($"[PlayerRespawn] Awake called. Start position set to: {startPos}, Boss fight respawn point at: {bossFightRespawn?.transform.position}");
+        if(bossFightRespawn == null) Debug.LogError($"[PlayerRespawn] Boss fight respawn point is not assigned! Rs Boss Fight {bossFightRespawn}");
     }
     
+    void Update() {
+        // if (questManager && questManager.HasPlacedKey && questManager.hasQuestCompleted) {
+        //    Debug.Log($"{questManager} [PlayerRespawn] Player is in boss fight area. Position updated to: {transform.position}");
+        //}
+        // Debug.Log($"[PlayerRespawn] Update called. Current position: {transform.position}, Start position: {startPos} Respawn Boss Room: {bossFightRespawn != null}");
+    }
+
+    public void SetRespawnPosToBoss() {
+        startPos = bossFightRespawn.transform.position;
+    }
+
     public IEnumerator Respawn(float duration) 
     {
         Debug.Log($"[PlayerRespawn] Starting respawn process. Duration: {duration} seconds");

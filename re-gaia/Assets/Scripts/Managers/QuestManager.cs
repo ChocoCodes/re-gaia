@@ -60,6 +60,8 @@ public class QuestManager : MonoBehaviour
         if (hasQuestCompleted && HasPlacedKey) {
             bm.DestroyBossRoomBarriers();
             keyUI.SetActive(false);
+            PlayerRespawn playerRespawn = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerRespawn>();
+            playerRespawn.SetRespawnPosToBoss();
             this.enabled = false;
         }
     }

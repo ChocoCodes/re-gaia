@@ -91,7 +91,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         GetComponent<PlayerInput>().enabled = false;
         rb.simulated = false;
-        this.enabled = false;
+        // this.enabled = false;
         
         StartCoroutine(GetComponent<PlayerRespawn>().Respawn(3f));
     }
