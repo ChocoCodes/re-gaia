@@ -7350,17 +7350,56 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: 86d876c98b109bb49b17e198bc08f5c6, type: 3}
   - audioSetName: SPIKE_ENABLED
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 867967dbabd4be24cbb8e3a4a17a4908, type: 3}
   - audioSetName: BARRIER_DESTROYED
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: bc4dea66c7cbaca4bb90d8200856d97d, type: 3}
   - audioSetName: ITEM_PICKUP
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: cbe3e2c9f00c41d4d9fcce929c335f81, type: 3}
   - audioSetName: BOSS_WALK
     sounds:
     - {fileID: 8300000, guid: 8510d2b58f1b346c98aaaeede6a60c21, type: 3}
   - audioSetName: BOSS_ATK
     sounds:
     - {fileID: 8300000, guid: 828bc7a59541149f3aaf4be925ce2026, type: 3}
+  - audioSetName: BOSS_PROJECTILE
+    sounds:
+    - {fileID: 8300000, guid: d4521c20ceb034f4e948e14a6b196d94, type: 3}
+  - audioSetName: BOSS_PROJECTILE_EXPOLOSION
+    sounds:
+    - {fileID: 8300000, guid: 1af4f0fb247a34c01b59bdcf656aea4f, type: 3}
+  - audioSetName: BOSS_PROJECTILE_LAUNCH
+    sounds:
+    - {fileID: 8300000, guid: 577474d8d602148c383e0da2a6591c28, type: 3}
+  - audioSetName: BOSS_DEATH
+    sounds:
+    - {fileID: 8300000, guid: 3eaf3b66ca66e4f9c8ed659e71dbaaac, type: 3}
+  - audioSetName: BOSS_GROWL
+    sounds:
+    - {fileID: 8300000, guid: c680934b372dd4309b4acb42070e0652, type: 3}
+  - audioSetName: BOSS_INTRO
+    sounds:
+    - {fileID: 8300000, guid: 0268dd645763f417a8bae9e6f15e1ec9, type: 3}
+  - audioSetName: BOSS_TAKE_HIT
+    sounds:
+    - {fileID: 8300000, guid: 9029c94da937e482e9cc8fcd2e3584f7, type: 3}
+  - audioSetName: ENEMY_TAKE_HIT
+    sounds:
+    - {fileID: 8300000, guid: 1f6fa2fd90ffc4f0f93a839c0c2ce4c1, type: 3}
+  - audioSetName: ENEMEY_DEATH
+    sounds:
+    - {fileID: 8300000, guid: 79d2f289c545d4299a6f76c3f6c297ad, type: 3}
+  - audioSetName: ENEMEY_PROJ_LAUNCH
+    sounds:
+    - {fileID: 8300000, guid: 4f6dddd0c0cc04b75a71e47acb06f175, type: 3}
+  - audioSetName: ENEMY_PROJ_FORMING
+    sounds:
+    - {fileID: 8300000, guid: 7bbf2edf3f2954f00bab82901b5708e5, type: 3}
+  - audioSetName: ENEMY_PROJ_EXPLODE
+    sounds:
+    - {fileID: 8300000, guid: abd23f7776d4e42c29474b88de1c4073, type: 3}
 --- !u!1 &453756479
 GameObject:
   m_ObjectHideFlags: 0
