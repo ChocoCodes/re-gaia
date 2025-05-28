@@ -18,6 +18,11 @@ public enum SoundType
     ITEM_PICKUP,
     BOSS_WALK,
     BOSS_ATK,
+    BOSS_PROJECTILE,
+    BOSS_PROJECTILE_EXPOLOSION,
+    BOSS_PROJECTILE_LAUNCH,
+    
+    
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
@@ -41,6 +46,12 @@ public class SoundManager: MonoBehaviour
         instance.asrc.PlayOneShot(clip, volume);
         // Reset pitch to default after playing
         instance.asrc.pitch = 1f; 
+    }
+
+    public static AudioClip GetClip(SoundType sound)
+    {
+        AudioClip[] clips = instance.soundList[(int)sound].Sounds;
+        return clips.Length > 1 ? clips[UnityEngine.Random.Range(0, clips.Length)] : clips[0];
     }
 
     #if UNITY_EDITOR

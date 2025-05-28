@@ -69,7 +69,6 @@
     <Compile Include="Assets/Scripts/Boss/Boss.cs" />
     <Compile Include="Assets/PlayFootstep.cs" />
     <Compile Include="Assets/Scripts/Managers/BarrierManager.cs" />
-    <Compile Include="Assets/BossSfx.cs" />
     <Compile Include="Assets/Scripts/Boss/Boss_Skill.cs" />
     <Compile Include="Assets/Scripts/Sound/PlaySoundEnter.cs" />
     <Compile Include="Assets/Scripts/Managers/PollutedWaterZone.cs" />
@@ -91,6 +90,7 @@
     <Compile Include="Assets/Scripts/Utils/KeyInteraction.cs" />
     <Compile Include="Assets/Scripts/Managers/EnemyRespawnManager.cs" />
     <Compile Include="Assets/Scripts/Utils/SpikeTrap.cs" />
+    <Compile Include="Assets/Scripts/Boss/BossSfx.cs" />
     <Compile Include="Assets/Scripts/Utils/LightPulse.cs" />
     <Compile Include="Assets/Scripts/Utils/QuestUIRenderer.cs" />
     <Compile Include="Assets/Scripts/Enemy/Enemy.cs" />
@@ -105,6 +105,7 @@
     <Compile Include="Assets/Scripts/Managers/EnemySpawner.cs" />
     <Compile Include="Assets/Scripts/Boss/Boss_Death_Explode.cs" />
     <Compile Include="Assets/Scripts/Utils/LootItem.cs" />
+    <Compile Include="Assets/Scripts/Projectiles/ProjectileSfx.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerSlash.cs" />
     <Compile Include="Assets/Scripts/Boss/Boss_Walk.cs" />
     <Compile Include="Assets/Scripts/Boss/BossIntroController.cs" />

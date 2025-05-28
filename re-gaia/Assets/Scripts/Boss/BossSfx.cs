@@ -5,7 +5,7 @@ public class BossSfx : MonoBehaviour
     // Animation Events only
     public void PlayWalkSFX()
     {
-        SoundManager.PlaySound(SoundType.BOSS_WALK, 0.6f);
+        SoundManager.PlaySound(SoundType.BOSS_WALK, 0.4f);
     }
     public void PlayAtkSFX()
     {

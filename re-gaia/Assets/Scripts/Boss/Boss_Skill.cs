@@ -122,25 +122,26 @@ public class Boss_Skill : StateMachineBehaviour
             yield break;
 
         float[] launchTimes = { 1f, 3f, 5f };
-        
+
         foreach (float t in launchTimes)
         {
             yield return new WaitForSeconds(t);
-            
+
             // Check if skill is still active before launching projectiles
             if (!isSkillActive)
                 yield break;
-            
+
             float[] angleOffsets = { -45f, 0f, 45f };
             foreach (float angle in angleOffsets)
             {
                 // Double-check before each projectile instantiation
                 if (!isSkillActive)
                     yield break;
-                    
+
                 Quaternion rotationOffset = Quaternion.Euler(0f, 0f, angle);
                 Instantiate(ProjectilePrefab, launchPoint.position, launchPoint.rotation * rotationOffset);
             }
+            SoundManager.PlaySound(SoundType.BOSS_PROJECTILE_LAUNCH, 0.6f);
         }
         
         // Clear the coroutine reference when it completes naturally
