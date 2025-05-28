@@ -21,8 +21,9 @@ public enum SoundType
     BOSS_PROJECTILE,
     BOSS_PROJECTILE_EXPOLOSION,
     BOSS_PROJECTILE_LAUNCH,
-    
-    
+    BOSS_DEATH,
+    BOSS_GROWL,
+    BOSS_INTRO,
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
