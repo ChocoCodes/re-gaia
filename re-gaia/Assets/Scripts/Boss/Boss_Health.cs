@@ -43,13 +43,16 @@ public class Boss_Health : MonoBehaviour
             Die();
             return;
         }
+
+        SoundManager.PlaySound(SoundType.BOSS_TAKE_HIT, 0.3f);
+        
         
         // Look at player when hit (if not already flashing)
         if (!isFlashing && bossMovement != null && bossMovement.player != null)
         {
             // Get direction to player
             bool shouldFaceRight = transform.position.x < bossMovement.player.position.x;
-            
+
             // Check if we need to flip
             if (shouldFaceRight && !bossMovement.isFlipped || !shouldFaceRight && bossMovement.isFlipped)
             {

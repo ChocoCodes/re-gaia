@@ -30,10 +30,12 @@ public class Bullet : MonoBehaviour
         if (player)
         {
             player.TakeDamage(damage, knockbackForce, knockbackDuration, transform.position);
+            SoundManager.PlaySound(SoundType.ENEMY_PROJ_EXPLODE, 0.7f);
             Destroy(gameObject);
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
+            SoundManager.PlaySound(SoundType.ENEMY_PROJ_EXPLODE, 0.7f);
             Destroy(gameObject);
         }
     }

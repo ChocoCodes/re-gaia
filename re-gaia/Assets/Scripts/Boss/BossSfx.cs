@@ -22,8 +22,14 @@ public class BossSfx : MonoBehaviour
         SoundManager.PlaySound(SoundType.BOSS_GROWL, 0.7f);
     }
 
-        public void PlayIntroSFX()
+    public void PlayIntroSFX()
     {
         SoundManager.PlaySound(SoundType.BOSS_INTRO, 0.6f);
+    }
+
+    public void PlayTakeHitSFX()
+    {
+        SoundManager.PlaySound(SoundType.BOSS_TAKE_HIT, 0.45f);
+        SoundManager.PlaySound(SoundType.ENEMY_TAKE_HIT, 0.7f);
     }
 }

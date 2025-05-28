@@ -55,6 +55,17 @@ public class SanctuaryEnemyAttack : MonoBehaviour
         rb.linearVelocity = direction * bulletSpeed;
     }
 
+    public void PlayFormingSFX() {
+        SoundManager.PlaySound(SoundType.ENEMY_PROJ_FORMING, 0.7f);
+    }
+
+    public void PlayLaunchSFX() {
+        SoundManager.PlaySound(SoundType.ENEMEY_PROJ_LAUNCH, 0.7f);
+    }
+
+    public void PlayExplodeSFX() {
+        SoundManager.PlaySound(SoundType.ENEMY_PROJ_EXPLODE, 0.7f);
+    }
     public void EndAttack()
     {
         isAttacking = false;

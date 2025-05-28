@@ -24,6 +24,12 @@ public enum SoundType
     BOSS_DEATH,
     BOSS_GROWL,
     BOSS_INTRO,
+    BOSS_TAKE_HIT,
+    ENEMY_TAKE_HIT,
+    ENEMEY_DEATH,
+    ENEMEY_PROJ_LAUNCH,
+    ENEMY_PROJ_FORMING,
+    ENEMY_PROJ_EXPLODE,
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
