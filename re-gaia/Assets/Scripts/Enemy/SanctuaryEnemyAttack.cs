@@ -66,6 +66,7 @@ public class SanctuaryEnemyAttack : MonoBehaviour
     public void PlayExplodeSFX() {
         SoundManager.PlaySound(SoundType.ENEMY_PROJ_EXPLODE, 0.7f);
     }
+    
     public void EndAttack()
     {
         isAttacking = false;
